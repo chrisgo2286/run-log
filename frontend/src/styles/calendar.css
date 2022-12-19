@@ -1,0 +1,60 @@
+.calendar {
+    max-width: 1000px;
+    min-width: 500px;
+    margin: 0px auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 200px;
+    border: 1px solid (--siteBorderColor);
+    background-color:var(--calendarHeaderColor);
+}
+
+.month-year, .month-prior, .month-after {
+    font-size: 50px;
+}
+
+.month-prior {
+    margin-left: 50px;
+}
+
+.month-after {
+    margin-right: 50px;
+}
+
+.body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day,
+.day-of-week {
+    flex: 1;
+    flex-basis: 13%;
+    max-width: 14.2%;
+    border: 1px solid var(--siteBorderColor);
+}
+
+.day-of-week {
+    height: 40px;
+}
+
+.day {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.day-body {
+    display: flex;
+    flex-direction: row;
+    margin: auto 0px;
+    justify-content: space-around;
+}
+
+
+
+

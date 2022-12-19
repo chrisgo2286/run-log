@@ -1,0 +1,18 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 5vh;
+    background: var(--navBarBG);
+    margin-bottom: 20px;
+  }
+    
+nav a {
+    margin: 0px 20px;
+    text-decoration: none;
+}
+    
+nav a:hover {
+    color: var(--navBarLinkHover);
+}
