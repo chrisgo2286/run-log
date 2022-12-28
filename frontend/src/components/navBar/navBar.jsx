@@ -1,8 +1,8 @@
 import React, { useContext} from 'react';
 import { Link } from 'react-router-dom';
-import { UserContext } from '../index';
-import Logout from './logout';
-import '../styles/navBar.css';
+import { UserContext } from '../../index';
+import Logout from '../logout/logout';
+import './navBar.css';
 
 export default function NavBar () {
     const user = useContext(UserContext)[0];

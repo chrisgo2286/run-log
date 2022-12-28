@@ -1,16 +1,15 @@
-import { useState, useContext } from 'react';
+import { useState, useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { UserContext } from '../index';
+import { UserContext } from '../../index';
 
-export default function Register (props) {
+export default function Login (props) {
     const user = useContext(UserContext)[0];
     const setUser = useContext(UserContext)[1];
     const navigate = useNavigate();
     const [credentials, setCredentials] = useState({
         username: '',
-        password1: '',
-        password2: '',
+        password: '',
     })
 
     function handleChange (event) {
@@ -19,11 +18,11 @@ export default function Register (props) {
     }
 
     function handleSubmit (event) {
-        axios.post('api/accounts/registration/', credentials)
+        axios.post('/api/accounts/login/', credentials)
         .then(response => {
             console.log(response)
 
-            if(response.status === 201) {
+            if(response.status === 200) {
                 const token = response.data.key;
                 localStorage.setItem('token', token);
                 localStorage.setItem('username', credentials.username);
@@ -40,7 +39,7 @@ export default function Register (props) {
     }
 
     return (
-        <div className="register">
+        <div className="login">
             <input 
                 type='text' 
                 name='username' 
@@ -50,16 +49,9 @@ export default function Register (props) {
             />
             <input 
                 type='password' 
-                name='password1' 
-                value={ credentials.password1 }
+                name='password' 
+                value={ credentials.password }
                 placeholder="Password"
-                onChange={ handleChange } 
-            />
-            <input 
-                type='password' 
-                name='password2' 
-                value={ credentials.password2 }
-                placeholder="Re-Type Password"
                 onChange={ handleChange } 
             />
             <button onClick={ handleSubmit }>SUBMIT</button>

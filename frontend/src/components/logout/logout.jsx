@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../index';
+import { UserContext } from '../../index';
 import axios from 'axios';
 
 export default function Logout () {

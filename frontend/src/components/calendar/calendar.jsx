@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Day from './day';
+import Day from '../day/day';
 import { 
     getCurrentMonthNum, 
     getCurrentMonthName, 
@@ -9,8 +9,8 @@ import {
     getNextMonth,
     getMonthName,
 
-} from '../misc/calendarFunctions.js';
-import '../styles/calendar.css';
+} from '../../misc/calendarFunctions.js';
+import './calendar.css';
 
 export default function Calendar () {
     const daysOfWeek = [

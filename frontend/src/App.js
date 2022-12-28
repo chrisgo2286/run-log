@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Calendar from './components/calendar';
-import NavBar from './components/navBar';
-import Home from './components/home';
-import AddRun from './components/addRun';
-import Register from './components/register';
-import Login from './components/login';
+import Calendar from './components/calendar/calendar';
+import NavBar from './components/navBar/navBar';
+import Home from './components/home/home';
+import AddRun from './components/addRun/addRun';
+import Register from './components/register/register';
+import Login from './components/login/login';
 import axios from 'axios';
 import { UserContext } from './index.js';
 
