@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Day from '../day/day';
 import { 
-    getCurrentMonthNum, 
-    getCurrentMonthName, 
-    getCurrentYear,
+    getMonthNumFromDate, 
+    getMonthNameFromDate,
+    getMonthNameFromNum, 
+    getYear,
     getPriorMonth,
     getNextMonth,
-    getMonthName,
-
 } from '../../misc/calendarFunctions.js';
 import './calendar.css';
 
@@ -20,9 +19,9 @@ export default function Calendar () {
     const date = new Date()
 
     const [month, setMonth] = useState({
-        number: getCurrentMonthNum(date),
-        name: getCurrentMonthName(date),
-        year: getCurrentYear(date)
+        number: getMonthNumFromDate(date),
+        name: getMonthNameFromDate(date),
+        year: getYear(date)
     })
 
     const [days, setDays] = useState([])
@@ -41,7 +40,7 @@ export default function Calendar () {
 
     function handlePriorMonth () {
         const [newMonthNum, newYear] = getPriorMonth(month.number, month.year);
-        const newMonthName = getMonthName(newMonthNum);
+        const newMonthName = getMonthNameFromNum(newMonthNum);
         const newMonth = { 
             number: newMonthNum,
             name: newMonthName,
@@ -52,7 +51,7 @@ export default function Calendar () {
 
     function handleNextMonth () {
         const [newMonthNum, newYear] = getNextMonth(month.number, month.year);
-        const newMonthName = getMonthName(newMonthNum);
+        const newMonthName = getMonthNameFromNum(newMonthNum);
         const newMonth = { 
             number: newMonthNum,
             name: newMonthName,
