@@ -3,6 +3,15 @@ const months = [
     'August', 'September', 'October', 'November', 'December'
 ]
 
+export function getMonthData (date) {
+    //Returns month number, name and year as object
+    return ({
+        number: getMonthNumFromDate(date),
+        name: getMonthNameFromDate(date),
+        year: getYear(date)
+    })
+}
+
 export function getMonthNumFromDate (date) {
     //Returns current month as numeral between 1-12
     return (date.getMonth() + 1)

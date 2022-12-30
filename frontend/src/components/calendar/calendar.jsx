@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Day from '../day/day';
-import { 
-    getMonthNumFromDate, 
-    getMonthNameFromDate,
+import { fetchData } from '../../misc/apiCalls';
+import {
+    getMonthData,
     getMonthNameFromNum, 
-    getYear,
     getPriorMonth,
     getNextMonth,
 } from '../../misc/calendarFunctions.js';
@@ -17,26 +16,13 @@ export default function Calendar () {
         'Saturday'
     ]
     const date = new Date()
-
-    const [month, setMonth] = useState({
-        number: getMonthNumFromDate(date),
-        name: getMonthNameFromDate(date),
-        year: getYear(date)
-    })
-
+    const curMonth = getMonthData(date)
+    const [month, setMonth] = useState(curMonth)
     const [days, setDays] = useState([])
 
-    const fetchData = async () => {
-        const result = await axios
-            .get('/api/calendar/', {
-                params: { month: month.number, year: month.year }
-            });
-            setDays(result.data);
-    }
-
     useEffect(() => {
-        fetchData();
-    }, [month])
+        fetchData(month, setDays);
+    }, [month]);
 
     function handlePriorMonth () {
         const [newMonthNum, newYear] = getPriorMonth(month.number, month.year);
