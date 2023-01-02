@@ -6,7 +6,7 @@ export default function Day (props) {
     const navigate = useNavigate();
 
     function updateRun () {
-        navigate('/add_run', {state: {
+        navigate('/update_run', {state: {
             date: formatDate(props.year, props.month, props.day_num),
             distance: props.distance,
             time: props.minutes,
@@ -18,10 +18,7 @@ export default function Day (props) {
 
     function addRun () {
         navigate('/add_run', {state: {
-            date: formatDate(props.year, props.month, props.day_num),
-            distance: '',
-            time: '',
-            comment: '',
+            date: formatDate(props.year, props.month, props.day_num)
             }
         });
     }

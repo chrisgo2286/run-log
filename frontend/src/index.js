@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 export const UserContext = createContext();
+export const MonthContext = createContext();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

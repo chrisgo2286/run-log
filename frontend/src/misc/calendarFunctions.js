@@ -12,6 +12,28 @@ export function getMonthData (date) {
     })
 }
 
+export function getPriorMonthData (month, year) {
+    //Returns month number, name and year as object
+    const [monthNum, monthYear] = getPriorMonth(month, year);
+    const monthName = getMonthNameFromNum(monthNum);
+    return ({
+        number: monthNum,
+        name: monthName,
+        year: monthYear,
+    });
+}
+
+export function getNextMonthData (month, year) {
+    //Returns month number, name and year as object
+    const [monthNum, monthYear] = getNextMonth(month, year);
+    const monthName = getMonthNameFromNum(monthNum);
+    return ({
+        number: monthNum,
+        name: monthName,
+        year: monthYear,
+    });
+}
+
 export function getMonthNumFromDate (date) {
     //Returns current month as numeral between 1-12
     return (date.getMonth() + 1)

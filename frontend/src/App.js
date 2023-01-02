@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Calendar from './components/calendar/calendar';
 import NavBar from './components/navBar/navBar';
 import Home from './components/home/home';
-import AddRun from './components/addRun/addRun';
+import AddRun from './components/runDetail/addRun';
+import UpdateRun from './components/runDetail/updateRun';
 import Register from './components/register/register';
 import Login from './components/login/login';
 import axios from 'axios';
-import { UserContext } from './index.js';
+import { UserContext, MonthContext } from './index.js';
+import { getMonthData } from './misc/calendarFunctions';
 
 export default function App () {
     axios.defaults.withCredentials = true
@@ -23,19 +25,26 @@ export default function App () {
         token: (token) ? token: '',
     })
 
+    const date = new Date()
+    const curMonth = getMonthData(date)
+    const [month, setMonth] = useState(curMonth)
+
     return (
         <React.Fragment>
             <UserContext.Provider value={ [user, setUser] }>
+            <MonthContext.Provider value={ [month, setMonth] }>
                 <Router>
                     <NavBar />
                     <Routes>
                         <Route path='/' element={ <Home /> } />
                         <Route path='/calendar' element={ <Calendar /> } />
                         <Route path='/add_run' element={ <AddRun /> } />
+                        <Route path='/update_run' element={ <UpdateRun /> } />
                         <Route path='/register' element={ <Register /> } />
                         <Route path='/login' element={ <Login /> } />
                     </Routes>
                 </Router>
+            </MonthContext.Provider>
             </UserContext.Provider>
         </React.Fragment>
     ); 

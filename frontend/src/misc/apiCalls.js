@@ -6,3 +6,17 @@ export const fetchData = async (month, setDays) => {
     });
     setDays(result.data);
 }
+
+export function patchRun (run_id, fields) {
+    axios.patch('/api/runs/' + run_id + '/', fields)
+    .then(response => {
+        console.log(response)
+    })
+}
+
+export function postRun (fields) {
+    axios.post('/api/runs/', fields)
+    .then(response => {
+        console.log(response)
+    })
+}
