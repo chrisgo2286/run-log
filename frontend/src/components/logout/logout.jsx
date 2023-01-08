@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../index';
-import axios from 'axios';
+import { postLogout } from '../../misc/apiCalls';
+import { clearUser } from '../../misc/userFunctions';
 
 export default function Logout () {
     
@@ -9,26 +10,15 @@ export default function Logout () {
     const setUser = useContext(UserContext)[1];
     const navigate = useNavigate();
 
-    function handleLogout () {
+    async function handleLogout () {
         if(localStorage.getItem('token') !== '') {
-            axios.post('/api/accounts/logout/')
-            .then(response => {
-                console.log(response)
+            const response = await postLogout();
             
-                if(response.status === 200) {
-                    localStorage.setItem('token', '');
-                    const newUser = {
-                        username: '',
-                        isLoggedIn: false,
-                        token: ''
-                    }
-                    setUser({ ...user, ...newUser });
-                    
-                    navigate('/');
-                }
-            })
+            if(response.status === 200) {
+                clearUser(user, setUser)
+                navigate('/');
+            }
         }
-
     }
     
     return (

@@ -22,7 +22,19 @@ export function postRun (fields) {
 }
 
 export async function postRegistration (credentials) {
-    const response = await axios.post('api/accounts/registration/', credentials)
+    const response = await axios.post('/api/accounts/registration/', credentials)
+    console.log(response)
+    return response
+}
+
+export async function postLogin (credentials) {
+    const response = await axios.post('/api/accounts/login/', credentials)
+    console.log(response)
+    return response
+}
+
+export async function postLogout () {
+    const response = await axios.post('/api/accounts/logout/')
     console.log(response)
     return response
 }

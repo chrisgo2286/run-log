@@ -11,3 +11,13 @@ export function updateUser (token, username, oldUser, setUser) {
     }
     setUser({ ...oldUser, ...newUser });
 }
+
+export function clearUser (user, setUser) {
+    localStorage.setItem('token', '');
+    const newUser = {
+        username: '',
+        isLoggedIn: false,
+        token: ''
+    }
+    setUser({ ...user, ...newUser });
+}
