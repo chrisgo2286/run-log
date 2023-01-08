@@ -31,7 +31,7 @@ class Month:
     def create_day(self, day_num, run=None):
         """Adds a single day to month"""
         if run:
-            return Day(day_num, run.distance, run.time, run.id)
+            return Day(day_num, run.distance, run.time, run.comment, run.id)
         return Day(day_num)
 
     def filter_runs_by_month(self):

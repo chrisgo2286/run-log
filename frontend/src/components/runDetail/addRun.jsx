@@ -7,7 +7,6 @@ export default function AddRun () {
 
     const { date } = useLocation().state;
     const navigate = useNavigate();
-    
     const [fields, setFields] = useState({
         date: date,
         distance: '',

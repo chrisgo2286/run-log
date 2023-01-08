@@ -9,7 +9,8 @@ export default function RunFields ({ fields, setFields }) {
                 name='date'
                 value={ fields.date }
                 fields={ fields }
-                setFields={ setFields }/>
+                setFields={ setFields }
+                placeholder={ fields.date }/>
             <Input
                 type='integer'
                 name='distance'

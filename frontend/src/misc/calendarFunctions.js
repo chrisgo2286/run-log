@@ -63,3 +63,13 @@ export function getNextMonth (month, year) {
     //Returns next month and year as an array of month and year
     return (month == 12) ? [1, year + 1]: [month + 1, year]
 }
+
+export function formatDate (year, month, day) {
+    return (
+        year + 
+        '-' +
+        month.toString().padStart(2,0) +
+        '-' + 
+        day.toString().padStart(2,0)
+    )
+}

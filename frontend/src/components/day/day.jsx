@@ -1,60 +1,32 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
+import { pullDay } from "./dayFunctions";
+import { formatDate } from "../../misc/calendarFunctions";
+import { navigateToAddRun, navigateToUpdateRun } from "../../misc/navFunctions";
 
-export default function Day (props) {
-
+export default function Day ({ month, day }) {
+    const { day_num, distance, minutes, comment, run_id } = day;
+    const { number, year } = month;
     const navigate = useNavigate();
-
-    function updateRun () {
-        navigate('/update_run', {state: {
-            date: formatDate(props.year, props.month, props.day_num),
-            distance: props.distance,
-            time: props.minutes,
-            comment: props.comment,
-            run_id: props.run_id,
-            }
-        });
-    }
-
-    function addRun () {
-        navigate('/add_run', {state: {
-            date: formatDate(props.year, props.month, props.day_num)
-            }
-        });
+    const dateString = formatDate(year, number, day_num); 
+    
+    function handleNavToUpdateRun () {
+        navigateToUpdateRun(navigate, dateString, day);
     }
     
+    function handleNavToAddRun () {
+        navigateToAddRun(navigate, dateString);
+    }
+
     function handleClick () {
-        return (props.run_id ? updateRun() : addRun() )
-    }
-
-    function handleDayNum () {
-        if (props.day_num != 'x') {
-            return (<div className="day-num">{ props.day_num }</div>)
-        }
-    }
-    function handleRunData () {
-        if (props.run_id) {
-            return (
-                <div className="day-body">
-                    <div className="distance">{ props.distance } km</div>
-                    <div className="minutes">{ props.minutes } min</div>
-                </div>
-            )
-        }
-        else if (props.day_num != 'x') {
-            return(<div className="day-body">Add Run</div>)
-        }
-    }
-
-    function formatDate (year, month, day) {
-        return (year + '-' + month + '-' + day.toString().padStart(2,0))
+        return (run_id ? handleNavToUpdateRun() : handleNavToAddRun() )
     }
 
     return (
         <div className="day" onClick={ handleClick }>
-            { handleDayNum() }
-            { handleRunData() }           
+            { pullDay(day) }
         </div>
     )
 }
+
 

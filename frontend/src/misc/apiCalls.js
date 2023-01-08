@@ -20,3 +20,9 @@ export function postRun (fields) {
         console.log(response)
     })
 }
+
+export async function postRegistration (credentials) {
+    const response = await axios.post('api/accounts/registration/', credentials)
+    console.log(response)
+    return response
+}
