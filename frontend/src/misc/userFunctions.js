@@ -13,7 +13,7 @@ export function updateUser (token, username, oldUser, setUser) {
 }
 
 export function clearUser (user, setUser) {
-    localStorage.setItem('token', '');
+    localStorage.clear();
     const newUser = {
         username: '',
         isLoggedIn: false,
