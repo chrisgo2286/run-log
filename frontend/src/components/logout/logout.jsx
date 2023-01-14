@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../../index';
+import { UserContext } from '../../misc/context';
 import { postLogout } from '../../misc/apiCalls';
 import { clearUser } from '../../misc/userFunctions';
 

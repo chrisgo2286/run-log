@@ -1,5 +1,5 @@
 import { getNextMonthData } from '../../../misc/calendarFunctions.js';
-import { MonthContext } from '../../../index.js';
+import { MonthContext } from '../../../misc/context';
 import { useContext } from 'react';
 
 export default function NextMonthBtn () {

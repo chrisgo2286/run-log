@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import CalendarHeader from './header/calendarHeader';
 import CalendarBody from './body/calendarBody';
-import { MonthContext } from '../../index';
+import { MonthContext } from '../../misc/context';
 import { fetchData } from '../../misc/apiCalls';
 import './calendar.css';
 

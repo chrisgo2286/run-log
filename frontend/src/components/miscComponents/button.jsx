@@ -1,7 +1,7 @@
-export default function Button () {
+export default function Button (props) {
     return (
-        <div className="Button">
-            { children }
+        <div className="button">
+            { props.children }
         </div>
     )
 }

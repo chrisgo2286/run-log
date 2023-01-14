@@ -8,7 +8,7 @@ import UpdateRun from './components/runDetail/updateRun';
 import Register from './components/register/register';
 import Login from './components/login/login';
 import axios from 'axios';
-import { UserContext, MonthContext } from './index.js';
+import { UserContext, MonthContext } from './misc/context';
 import { getMonthData } from './misc/calendarFunctions';
 
 export default function App () {
@@ -24,7 +24,7 @@ export default function App () {
         isLoggedIn: (token) ? true: false,
         token: (token) ? token: '',
     })
-
+    
     const date = new Date()
     const curMonth = getMonthData(date)
     const [month, setMonth] = useState(curMonth)

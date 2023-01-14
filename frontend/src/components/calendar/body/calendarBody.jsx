@@ -1,7 +1,7 @@
 import DaysOfWeek from "./daysOfWeek";
 import Day from "../../day/day";
 import { useContext } from "react";
-import { MonthContext } from "../../../index";
+import { MonthContext } from '../../../misc/context';
 
 export default function CalendarBody ({ days }) {
 

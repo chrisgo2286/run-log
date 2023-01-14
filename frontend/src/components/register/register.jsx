@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../../index';
+import { UserContext } from '../../misc/context';
 import { postRegistration } from '../../misc/apiCalls';
 import { updateLocalStorage } from '../../misc/userFunctions';
 import { updateUser } from '../../misc/userFunctions';
