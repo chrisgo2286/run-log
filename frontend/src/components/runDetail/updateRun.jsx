@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { patchRun } from '../../misc/apiCalls';
+import { patchRun, deleteRun } from '../../misc/apiCalls';
 import RunFields from './runFields';
 
 export default function UpdateRun () {
@@ -20,10 +20,16 @@ export default function UpdateRun () {
         navigate('/calendar');
     }
 
+    function handleDelete () {
+        deleteRun(run_id);
+        navigate('/calendar');
+    }
+
     return (
         <div className='update-run'>
             <RunFields fields={ fields } setFields={ setFields } />
-            <button onClick={ handleSubmit }>SUBMIT</button>
+            <button onClick={ handleSubmit } data-cy='update-run-btn'>SUBMIT</button>
+            <button onClick={ handleDelete } data-cy='delete-run-btn'>DELETE</button>
         </div>
     )
 }

@@ -4,8 +4,7 @@ import Button from "../miscComponents/button"
 export default function Home () {
     return (
         <React.Fragment>
-            <div className="home">HOME</div>
-            <Button>Submit</Button>
+            <div className="home" data-cy='home'>HOME</div>
         </React.Fragment>
     )
 }

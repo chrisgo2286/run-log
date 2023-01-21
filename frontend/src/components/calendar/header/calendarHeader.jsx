@@ -1,7 +1,7 @@
 import NextMonthBtn from "./nextMonthBtn";
 import PriorMonthBtn from "./priorMonthBtn";
 import { MonthContext } from '../../../misc/context';
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 export default function CalendarHeader () {
     
@@ -10,7 +10,7 @@ export default function CalendarHeader () {
     return (
         <div className='calendar-header'>
             <PriorMonthBtn />
-            <div className='calendar-title'>{ month.name } { month.year }</div>
+            <div className='calendar-title' data-cy='month-year'>{ month.name } { month.year }</div>
             <NextMonthBtn />
         </div>
     )

@@ -23,7 +23,7 @@ export default function AddRun () {
     return (
         <div className='add-run'>
             <RunFields fields={ fields } setFields={ setFields } />
-            <button onClick={ handleSubmit }>SUBMIT</button>
+            <button onClick={ handleSubmit } data-cy='add-run-btn'>SUBMIT</button>
         </div>
     )
 }

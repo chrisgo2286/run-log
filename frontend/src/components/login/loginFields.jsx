@@ -10,14 +10,16 @@ export default function LoginFields ({ fields, setFields }) {
                 value={ fields.username }
                 fields={ fields }
                 setFields={ setFields }
-                placeholder='Username' />
+                placeholder='Username'
+                data-cy='username-field' />
             <Input
                 type='password'
                 name='password'
                 value={ fields.password }
                 fields={ fields }
                 setFields={ setFields }
-                placeholder='Password' />
+                placeholder='Password'
+                data-cy='password-field' />
         </React.Fragment>
     )
 }

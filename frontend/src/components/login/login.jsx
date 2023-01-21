@@ -27,7 +27,7 @@ export default function Login () {
     return (
         <div className="login">
             <LoginFields fields={ credentials } setFields={ setCredentials } />
-            <button onClick={ handleSubmit }>SUBMIT</button>
+            <button onClick={ handleSubmit } data-cy='login-btn'>SUBMIT</button>
         </div>
     )
 }

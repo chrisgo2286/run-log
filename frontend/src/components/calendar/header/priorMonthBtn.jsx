@@ -12,6 +12,11 @@ export default function PriorMonthBtn () {
     }
 
     return (
-        <div className='month-prior' onClick={ handlePriorMonth }>&#8678;</div>
+        <div 
+            className='month-prior' 
+            onClick={ handlePriorMonth } 
+            data-cy='prior-month-btn'>
+            &#8678;
+        </div>
     )
 }

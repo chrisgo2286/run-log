@@ -12,6 +12,11 @@ export default function NextMonthBtn () {
     }
 
     return (
-        <div className='month-after' onClick={ handleNextMonth }>&#8680;</div>
+        <div 
+            className='month-after' 
+            onClick={ handleNextMonth }
+            data-cy='next-month-btn'>
+            &#8680;
+        </div>
     )
 }

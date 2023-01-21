@@ -6,7 +6,7 @@ export function pullDay (day) {
     }
 }
 
-function dayNoRun (day_num) {
+export function dayNoRun (day_num) {
     return (
         <React.Fragment>
             <div className="day-num">{ day_num }</div>
@@ -15,7 +15,7 @@ function dayNoRun (day_num) {
     )
 }
 
-function dayWithRun (day) {
+export function dayWithRun (day) {
     const { day_num, distance, minutes } = day;
     return (
         <React.Fragment>

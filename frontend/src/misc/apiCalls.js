@@ -14,6 +14,13 @@ export function patchRun (run_id, fields) {
     })
 }
 
+export function deleteRun (run_id) {
+    axios.delete('/api/runs/' + run_id + '/')
+    .then(response => {
+        console.log(response)
+    })
+}
+
 export function postRun (fields) {
     axios.post('/api/runs/', fields)
     .then(response => {
@@ -38,3 +45,4 @@ export async function postLogout () {
     console.log(response)
     return response
 }
+

@@ -10,28 +10,32 @@ export default function RunFields ({ fields, setFields }) {
                 value={ fields.date }
                 fields={ fields }
                 setFields={ setFields }
-                placeholder={ fields.date }/>
+                placeholder={ fields.date }
+                data-cy='run-date'/>
             <Input
                 type='integer'
                 name='distance'
                 value={ fields.distance }
                 fields={ fields }
                 setFields={ setFields }
-                placeholder='Distance' />
+                placeholder='Distance' 
+                data-cy='run-distance' />
             <Input
                 type='integer'
                 name='time'
                 value={ fields.time }
                 fields={ fields }
                 setFields={ setFields }
-                placeholder='Time (Minutes)'/>
+                placeholder='Time (Minutes)'
+                data-cy='run-time' />
             <Input
                 type='text'
                 name='comment'
                 value={ fields.comment }
                 fields={ fields }
                 setFields={ setFields }
-                placeholder='Comment'/>
+                placeholder='Comment'
+                data-cy='run-comment' />
         </React.Fragment>
     )
 }

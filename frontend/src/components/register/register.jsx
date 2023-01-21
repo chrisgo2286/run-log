@@ -6,7 +6,7 @@ import { updateLocalStorage } from '../../misc/userFunctions';
 import { updateUser } from '../../misc/userFunctions';
 import NewUserFields from './newUserFields';
 
-export default function Register (props) {
+export default function Register () {
     const [user, setUser] = useContext(UserContext);
     const navigate = useNavigate();
     const [credentials, setCredentials] = useState({
@@ -28,9 +28,9 @@ export default function Register (props) {
     }
 
     return (
-        <div className="register">
+        <div className="register" data-cy='register-link'>
             <NewUserFields fields={ credentials } setFields={ setCredentials }/>
-            <button onClick={ handleSubmit }>SUBMIT</button>
+            <button onClick={ handleSubmit } data-cy='register-btn'>SUBMIT</button>
         </div>
     )
 }

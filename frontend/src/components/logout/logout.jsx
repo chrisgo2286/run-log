@@ -6,8 +6,7 @@ import { clearUser } from '../../misc/userFunctions';
 
 export default function Logout () {
     
-    const user = useContext(UserContext)[0];
-    const setUser = useContext(UserContext)[1];
+    const [ user, setUser ] = useContext(UserContext);
     const navigate = useNavigate();
 
     async function handleLogout () {
@@ -23,7 +22,7 @@ export default function Logout () {
     
     return (
         <React.Fragment>
-            <div onClick={ handleLogout }>Logout</div>
+            <div onClick={ handleLogout } data-cy='logout-link'>Logout</div>
         </React.Fragment>
     )
 }

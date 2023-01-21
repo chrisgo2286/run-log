@@ -5,7 +5,7 @@ import { formatDate } from "../../misc/calendarFunctions";
 import { navigateToAddRun, navigateToUpdateRun } from "../../misc/navFunctions";
 
 export default function Day ({ month, day }) {
-    const { day_num, distance, minutes, comment, run_id } = day;
+    const { day_num, run_id } = day;
     const { number, year } = month;
     const navigate = useNavigate();
     const dateString = formatDate(year, number, day_num); 
@@ -23,7 +23,7 @@ export default function Day ({ month, day }) {
     }
 
     return (
-        <div className="day" onClick={ handleClick }>
+        <div className="day" onClick={ handleClick } data-cy={ 'day' + day_num }>
             { pullDay(day) }
         </div>
     )
