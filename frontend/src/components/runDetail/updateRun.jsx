@@ -5,11 +5,12 @@ import RunFields from './runFields';
 
 export default function UpdateRun () {
     
-    const { date, distance, time, comment, run_id } = useLocation().state;
+    const { date, run_type, distance, time, comment, run_id } = useLocation().state;
     const navigate = useNavigate();
     
     const [fields, setFields] = useState({
         date: date,
+        run_type: run_type,
         distance: distance,
         time: time,
         comment: comment,

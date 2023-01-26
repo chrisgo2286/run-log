@@ -1,7 +1,9 @@
 import React from "react";
 import Input from "../miscComponents/input";
+import SelectField from "../miscComponents/selectField";
 
 export default function RunFields ({ fields, setFields }) {
+    const options = ['Easy Run', 'Long Run', 'Intervals', 'Tempo Run']
     return (
         <React.Fragment>
             <Input
@@ -12,6 +14,12 @@ export default function RunFields ({ fields, setFields }) {
                 setFields={ setFields }
                 placeholder={ fields.date }
                 data-cy='run-date'/>
+            <SelectField
+                name='run_type'
+                initial={ fields.run_type }
+                options={ options }
+                fields={ fields }
+                setFields={ setFields } />
             <Input
                 type='integer'
                 name='distance'

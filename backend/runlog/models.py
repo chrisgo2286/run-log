@@ -4,9 +4,23 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+RUN_CHOICES = (
+    ('Easy Run', 'Easy Run'),
+    ('Long Run', 'Long Run'),
+    ('Intervals', 'Intervals'),
+    ('Tempo Run', 'Tempo Run')
+)
+
 class Run(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField(blank=False, null=False)
+    run_type = models.CharField(
+        blank=True, 
+        null=True, 
+        max_length=20, 
+        choices=RUN_CHOICES, 
+        default='Easy Run'
+    )
     distance = models.DecimalField(
         blank=False, 
         null=False, 
