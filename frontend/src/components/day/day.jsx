@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { pullDay } from "./dayFunctions";
 import { formatDate } from "../../misc/calendarFunctions";
 import { navigateToAddRun, navigateToUpdateRun } from "../../misc/navFunctions";
+import './day.css';
 
 export default function Day ({ month, day }) {
     const { day_num, run_id } = day;

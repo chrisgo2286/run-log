@@ -42,19 +42,6 @@
     height: 40px;
 }
 
-.day {
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-}
-
-.day-body {
-    display: flex;
-    flex-direction: row;
-    margin: auto 0px;
-    justify-content: space-around;
-}
-
 
 
 

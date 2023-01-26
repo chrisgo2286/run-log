@@ -1,0 +1,32 @@
+.day {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.day-body {
+    align-self: center;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "run-type run-type"
+        "distance minutes";
+}
+
+.run-type {
+    grid-area: run-type;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.distance {
+    grid-area: distance;
+}
+
+.minutes {
+    grid-area: minutes;
+}
+
