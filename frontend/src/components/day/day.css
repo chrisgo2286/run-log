@@ -2,7 +2,7 @@
     height: 100px;
     display: flex;
     flex-direction: column;
-
+    cursor: pointer;
 }
 
 .day-body {

@@ -9,6 +9,7 @@ export default function AddRun () {
     const navigate = useNavigate();
     const [fields, setFields] = useState({
         date: date,
+        run_type: '',
         distance: '',
         time: '',
         comment: '',
@@ -16,6 +17,7 @@ export default function AddRun () {
 
     function handleSubmit () {
         const newFields = { ...fields, owner: '1' };
+        console.log(newFields)
         postRun(newFields);
         navigate('/calendar');
     }
