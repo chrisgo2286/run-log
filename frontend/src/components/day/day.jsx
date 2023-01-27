@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { pullDay, buildClass } from "./dayFunctions";
+import { pullDay, buildClass, isFutureDate } from "./dayFunctions";
 import { formatDate } from "../../misc/calendarFunctions";
 import { navigateToAddRun, navigateToUpdateRun } from "../../misc/navFunctions";
 import './day.css';
 
 export default function Day ({ month, day }) {
     const [ isHovered, setIsHovered ] = useState(false)
+    const dateObj = new Date(month.year, month.number - 1, day.day_num)
     const { day_num, run_id } = day;
     const { number, year } = month;
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ export default function Day ({ month, day }) {
     }
 
     function handleClass () {
-        return buildClass(day.run_type, isHovered);
+        return buildClass(day.run_type, isHovered, dateObj);
     }
 
     function handleNavToUpdateRun () {

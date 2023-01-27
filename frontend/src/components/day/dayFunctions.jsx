@@ -31,14 +31,20 @@ export function dayWithRun (day) {
     )
 }
 
-export function buildClass (run_type, isHovered) {
+export function buildClass (run_type, isHovered, dateObj) {
     var className = 'day';
+    const curDate = new Date;
     if (run_type) {
         const runClass = runTypeClass(run_type);
         className = className + ' ' + runClass
     }
+    
     if (isHovered) {
         className = className + ' ' + 'hover';
+    }
+
+    if (curDate < dateObj) {
+        className = className + ' ' + 'future-day';
     }
     return className;
 }

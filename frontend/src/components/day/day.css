@@ -6,8 +6,12 @@
     background-color: var(--restDayColor);
 }
 
-.hover {
+.future-day {
     opacity: 75%;
+}
+
+.hover {
+    opacity: 50%;
 }
 
 .day-body {
