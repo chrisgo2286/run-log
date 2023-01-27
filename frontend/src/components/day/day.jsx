@@ -18,7 +18,7 @@ export default function Day ({ month, day }) {
     }
 
     function handleClass () {
-        return buildClass(day.run_type, isHovered, dateObj);
+        return buildClass(day, isHovered, dateObj);
     }
 
     function handleNavToUpdateRun () {
@@ -30,7 +30,9 @@ export default function Day ({ month, day }) {
     }
 
     function handleClick () {
-        return (run_id ? handleNavToUpdateRun() : handleNavToAddRun() )
+        if (day.day_num !== 'x' ) {
+            return (run_id) ? handleNavToUpdateRun() : handleNavToAddRun()
+        }
     }
 
     return (
