@@ -5,6 +5,12 @@
   --navBarLinkHover: slategrey;
   --hoverColor: rgba(211, 231, 240, 0.5);
   --calendarHeaderColor: rgba(211, 231, 240, 0.5);
+  --daysOfWeekColor: rgba(211, 211, 211, .5);
+  --easyRunColor: rgba(102, 155, 204, 0.5);
+  --longRunColor: rgba(126, 204, 102, 0.5);
+  --intervalsColor:  rgba(214, 130, 127, 0.5);
+  --tempoRunColor:  rgba(204, 177, 102, 0.5);
+  --restDayColor:  var(--calendarHeaderColor);
 }
 
 * {

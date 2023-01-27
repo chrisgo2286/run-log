@@ -3,6 +3,11 @@
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    background-color: var(--restDayColor);
+}
+
+.hover {
+    opacity: 75%;
 }
 
 .day-body {
@@ -30,3 +35,18 @@
     grid-area: minutes;
 }
 
+.easy-run {
+    background-color: var(--easyRunColor)
+}
+
+.long-run {
+    background-color: var(--longRunColor)
+}
+
+.tempo-run {
+    background-color: var(--tempoRunColor)
+}
+
+.intervals {
+    background-color: var(--intervalsColor)
+}

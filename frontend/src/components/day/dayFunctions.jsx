@@ -30,3 +30,34 @@ export function dayWithRun (day) {
         </React.Fragment>
     )
 }
+
+export function buildClass (run_type, isHovered) {
+    var className = 'day';
+    if (run_type) {
+        const runClass = runTypeClass(run_type);
+        className = className + ' ' + runClass
+    }
+    if (isHovered) {
+        className = className + ' ' + 'hover';
+    }
+    return className;
+}
+
+function runTypeClass (run_type) {
+        switch(run_type) {
+        case 'Easy Run':
+            return 'easy-run';
+            break;
+        case 'Long Run':
+            return 'long-run';
+            break;
+        case 'Intervals':
+            return 'intervals';
+            break;
+        case 'Tempo Run':
+            return 'tempo-run';
+            break;
+        default:
+            return;
+    }
+}

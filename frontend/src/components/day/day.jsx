@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { pullDay } from "./dayFunctions";
+import { pullDay, buildClass } from "./dayFunctions";
 import { formatDate } from "../../misc/calendarFunctions";
 import { navigateToAddRun, navigateToUpdateRun } from "../../misc/navFunctions";
 import './day.css';
 
 export default function Day ({ month, day }) {
+    const [ isHovered, setIsHovered ] = useState(false)
     const { day_num, run_id } = day;
     const { number, year } = month;
     const navigate = useNavigate();
     const dateString = formatDate(year, number, day_num); 
     
+    function toggleHover () {
+        setIsHovered(!isHovered);
+    }
+
+    function handleClass () {
+        return buildClass(day.run_type, isHovered);
+    }
+
     function handleNavToUpdateRun () {
         navigateToUpdateRun(navigate, dateString, day);
     }
@@ -24,7 +33,12 @@ export default function Day ({ month, day }) {
     }
 
     return (
-        <div className="day" onClick={ handleClick } data-cy={ 'day' + day_num }>
+        <div 
+            className={ handleClass() } 
+            onClick={ handleClick }
+            onMouseEnter={ toggleHover }
+            onMouseLeave={ toggleHover } 
+            data-cy={ 'day' + day_num }>
             { pullDay(day) }
         </div>
     )
