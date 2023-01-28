@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'runlog',
+    'accounts',
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
