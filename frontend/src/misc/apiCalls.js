@@ -52,9 +52,8 @@ export async function postLogout () {
 
 // Profile API Calls
 
-export function postProfile (fields) {
-    axios.post('/api/profiles/', fields)
-    .then(response => {
-        console.log(response)
+export const getProfile = async (setProfile) => {
+    const result = await axios.get('/api/profiles/', {
     })
+    setProfile(result.data[0])
 }

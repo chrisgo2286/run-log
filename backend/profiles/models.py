@@ -19,7 +19,7 @@ class Profile(models.Model):
 
     @property
     def username(self):
-        return self.User.username
+        return self.owner.username
 
     def __str__(self):
         return f'{self.username} - Profile'
