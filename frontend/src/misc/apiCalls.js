@@ -1,5 +1,7 @@
 import axios from "axios";
 
+// Calendar API Calls
+
 export const fetchData = async (month, setDays) => {
     const result = await axios.get('/api/calendar/', {
         params: { month: month.number, year: month.year }
@@ -28,6 +30,8 @@ export function postRun (fields) {
     })
 }
 
+// Account API Calls
+
 export async function postRegistration (credentials) {
     const response = await axios.post('/api/accounts/registration/', credentials)
     console.log(response)
@@ -46,3 +50,11 @@ export async function postLogout () {
     return response
 }
 
+// Profile API Calls
+
+export function postProfile (fields) {
+    axios.post('/api/profiles/', fields)
+    .then(response => {
+        console.log(response)
+    })
+}
