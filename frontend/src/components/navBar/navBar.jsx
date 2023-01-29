@@ -14,6 +14,7 @@ export default function NavBar () {
         <nav>
             <div className='site-links'>
                 <Link to='/'>Home</Link>
+                <Link to='/profile'>Profile</Link>
                 <Link to='/calendar'>Calendar</Link>
             </div>
             <div className='user-links'>
