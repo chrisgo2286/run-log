@@ -16,3 +16,9 @@ export function navigateToUpdateRun (navigate, date, day) {
         }
     });
 }
+
+export function navigateToUpdateProfile (navigate, profile) {
+    navigate('/update_profile', {state: {
+        profile: profile
+    }})
+}
