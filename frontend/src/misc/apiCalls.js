@@ -59,7 +59,7 @@ export const getProfile = async (setProfile) => {
 }
 
 export function patchProfile (profile_id, fields) {
-    axios.patch('api/profiles/' + { profile_id } + '/', fields)
+    axios.patch('api/profiles/' + profile_id + '/', fields)
     .then(response => {
         console.log(response);
     })

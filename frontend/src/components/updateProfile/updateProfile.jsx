@@ -5,8 +5,7 @@ import ProfileFields from './profileFields';
 
 export default function UpdateProfile () {
     const profile = useLocation().state;
-    const ({ profile_id, age, gender, email, preference, history, description } = profile);
-    console.log(age)
+    const { id, age, gender, email, preference, history, description } = profile;
     const navigate = useNavigate();
     const [ fields, setFields ] = useState({
         age: age,
@@ -18,7 +17,7 @@ export default function UpdateProfile () {
     })
 
     function handleSubmit () {
-        patchProfile(profile_id, profile)
+        patchProfile(id, fields)
         navigate('/profile');
     }
 
