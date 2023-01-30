@@ -5,52 +5,60 @@ import SelectField from "../miscComponents/selectField";
 export default function ProfileFields ({ fields, setFields }) {
     return (
         <React.Fragment>
-            <Input
-                type='integer'
-                name='age'
-                value={ fields.age }
-                fields={ fields }
-                setFields={ setFields }
-                placeholder={ 'Age'}
-                data-cy='profile-age' />
-            <SelectField
-                name='gender'
-                initial={ fields.gender }
-                options={[ 'Male', 'Female' ]}
-                fields={ fields }
-                setFields={ setFields } />
-            <Input
-                type='email'
-                name='email'
-                value={ fields.email }
-                fields={ fields }
-                setFields={ setFields }
-                placeholder={ 'E-mail'}
-                data-cy='profile-email' />
-            <Input
-                type='text'
-                name='preference'
-                value={ fields.preference }
-                fields={ fields }
-                setFields={ setFields }
-                placeholder={ 'Running Preference'}
-                data-cy='profile-preference' />
-            <Input
-                type='text'
-                name='history'
-                value={ fields.history }
-                fields={ fields }
-                setFields={ setFields }
-                placeholder={ 'Running History'}
-                data-cy='profile-history' />
-            <Input
-                type='text'
-                name='description'
-                value={ fields.description }
-                fields={ fields }
-                setFields={ setFields }
-                placeholder={ 'About Me'}
-                data-cy='profile-description' />
+            <div className="profile-fields-a">
+                <Input
+                    type='integer'
+                    name='age'
+                    value={ fields.age }
+                    fields={ fields }
+                    setFields={ setFields }
+                    placeholder={ 'Age'}
+                    className="profile-age"
+                    data-cy='profile-age' />
+                <SelectField
+                    name='gender'
+                    initial={ fields.gender }
+                    options={[ 'Male', 'Female' ]}
+                    fields={ fields }
+                    setFields={ setFields }
+                    className="profile-gender"
+                    data-cy='profile-gender' />
+                <Input
+                    type='email'
+                    name='email'
+                    value={ fields.email }
+                    fields={ fields }
+                    setFields={ setFields }
+                    placeholder={ 'E-mail'}
+                    className="profile-email"
+                    data-cy='profile-email' />
+            </div>
+            <div className="profile-fields-b">
+                <Input
+                    type='text'
+                    name='preference'
+                    value={ fields.preference }
+                    fields={ fields }
+                    setFields={ setFields }
+                    placeholder={ 'Running Preference'}
+                    data-cy='profile-preference' />
+                <Input
+                    type='text'
+                    name='history'
+                    value={ fields.history }
+                    fields={ fields }
+                    setFields={ setFields }
+                    placeholder={ 'Running History'}
+                    data-cy='profile-history' />
+                <Input
+                    type='text'
+                    name='description'
+                    value={ fields.description }
+                    fields={ fields }
+                    setFields={ setFields }
+                    placeholder={ 'About Me'}
+                    data-cy='profile-description' />
+            </div>
         </React.Fragment>
     )
 }

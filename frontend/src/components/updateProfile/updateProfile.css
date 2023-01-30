@@ -1,0 +1,27 @@
+.update-profile {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 20px 20px;
+}
+
+.update-profile input,
+.update-profile select{
+    height: 40px;
+    margin-top: 10px;
+}
+
+.profile-fields-a {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-fields-b {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-profile button {
+    width: 25%;
+    margin-top: 10px;
+}

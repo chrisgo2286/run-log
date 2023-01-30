@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { patchProfile } from '../../misc/apiCalls';
 import ProfileFields from './profileFields';
+import './updateProfile.css';
 
 export default function UpdateProfile () {
     const profile = useLocation().state;
