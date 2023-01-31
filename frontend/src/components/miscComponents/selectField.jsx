@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './selectField.css';
 
 export default function SelectField ({ 
     name, 
@@ -17,11 +18,14 @@ export default function SelectField ({
     }
 
     return (
-        <select name={ name } value={ choice } onChange={ handleChange }>
-            { 
-                options.map((option, ndx) =>
-                    <option key={ndx} value={ option }>{ option }</option>
-            )}
-        </select>
+        <div className="select-pair">
+            <label htmlFor={ name }>{ name }</label>
+            <select name={ name } value={ choice } onChange={ handleChange }>
+                { 
+                    options.map((option, ndx) =>
+                        <option key={ndx} value={ option }>{ option }</option>
+                )}
+            </select>
+        </div>
     )
 }
