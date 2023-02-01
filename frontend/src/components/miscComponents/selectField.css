@@ -2,4 +2,25 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
     align-items: center;
+    margin: 20px;
+    height: 40px;
+    border-radius: 10%;
+}
+
+.select-pair select {
+    background-color: var(--inputColor);
+    height: 100%;
+    border: 1px solid var(--inputBorderColor);
+    border-radius: 0px 15px 15px 0px;
+    padding-left: 10px;
+}
+
+.select-pair label {
+    background-color: var(--labelColor);
+    height: 100%;
+    border: 1px solid var(--inputBorderColor);
+    border-radius: 15px 0px 0px 15px;
+    text-align: right;
+    line-height: 40px;
+    padding-right: 10px;
 }
