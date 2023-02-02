@@ -8,10 +8,13 @@ export default function Button ({ onClick, label }) {
         setIsHovered(!ishovered)
     }
 
-    function 
+    function buildClass () {
+        return (ishovered) ? 'button btn-hover': 'button';
+    }
+
     return (
         <div 
-            className="button" 
+            className={ buildClass() } 
             onClick={ onClick }
             onMouseEnter={ toggleHover }
             onMouseLeave={ toggleHover } >

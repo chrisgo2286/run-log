@@ -1,3 +1,8 @@
+:root {
+    --btnColor: rgba(126, 204, 102, 0.5);
+    --btnBorderColor: rgba(48, 42, 42, 0.65);
+}
+
 .button {
     border: 1px solid var(--btnBorderColor);
     border-radius: 10px;
@@ -10,6 +15,6 @@
     cursor: pointer;
 }
 
-.hover {
-    opacity: 50%;
+.btn-hover {
+    opacity: 80%;
 }
