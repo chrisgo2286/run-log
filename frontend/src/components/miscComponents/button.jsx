@@ -1,6 +1,6 @@
-export default function Button (props) {
+export default function Button ({ onClick }) {
     return (
-        <div className="button">
+        <div className="button" onClick={ onClick }>
             { props.children }
         </div>
     )
