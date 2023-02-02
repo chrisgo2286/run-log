@@ -4,6 +4,7 @@ import { getProfile } from "../../misc/apiCalls";
 import { UserContext } from "../../misc/context";
 import { navigateToUpdateProfile } from "../../misc/navFunctions";
 import ProfileItem from "./profileItem";
+import Button from '../miscComponents/button';
 import './profile.css';
 
 export default function Profile () {
@@ -36,7 +37,7 @@ export default function Profile () {
             <ProfileItem label='Running Preference' data={ profile.preference } />
             <ProfileItem label='Running History' data={ profile.history } />
             <ProfileItem label='About Me' data={ profile.description } />
-            <button onClick={ handleNavToUpdateProfile }>EDIT</button>
+            <Button onClick={ handleNavToUpdateProfile } label='Edit' />
         </div>
     )
 }

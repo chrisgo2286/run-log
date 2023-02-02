@@ -25,3 +25,8 @@
     padding-right: 10px;
     text-transform: uppercase;
 }
+
+.select-hover {
+    opacity: 80%;
+    cursor: pointer;
+}

@@ -14,3 +14,7 @@
     justify-content: center;
 }
 
+.profile .button {
+    width: 25%;
+    margin: 25px auto;
+}

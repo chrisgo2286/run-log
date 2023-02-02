@@ -3,8 +3,7 @@
     grid-template-columns: 1fr 4fr;
     align-items: center;
     margin: 20px 0px;
-    height: 40px;
-    border-radius: 10%;
+    height: 30px;
 }
 
 .input-pair input {

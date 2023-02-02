@@ -9,8 +9,9 @@
     align-items: center;
     justify-content: space-between;
     height: 200px;
-    border: 1px solid (--siteBorderColor);
+    border: 1px solid var(--siteBorderColor);
     background-color:var(--calendarHeaderColor);
+    border-radius: 5px;
 }
 
 .calendar-title, .month-prior, .month-after {
@@ -36,6 +37,7 @@
     flex-basis: 13%;
     max-width: 14.2%;
     border: 1px solid var(--siteBorderColor);
+    border-radius: 5px;
 }
 
 .day-of-week {
