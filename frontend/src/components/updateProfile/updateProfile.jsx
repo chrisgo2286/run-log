@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { patchProfile } from '../../misc/apiCalls';
 import ProfileFields from './profileFields';
+import Button from '../miscComponents/button';
 import './updateProfile.css';
 
 export default function UpdateProfile () {
@@ -25,7 +26,10 @@ export default function UpdateProfile () {
     return (
         <div className="update-profile">
             <ProfileFields fields={ fields } setFields={ setFields } />
-            <button onClick={ handleSubmit } data-cy='update-profile-btn'>SUBMIT</button>
+            <Button 
+                onClick={ handleSubmit } 
+                label='Submit'
+                data-cy='update-profile-btn' />
         </div>
     )
 }

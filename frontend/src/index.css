@@ -14,6 +14,8 @@
   --inputBorderColor: rgba(33, 48, 40, 0.75);
   --inputColor: rgba(102, 204, 185, 0.5);
   --labelColor: rgba(45, 130, 116, 0.5);
+  --btnColor: rgba(126, 204, 102, 0.5);
+  --btnBorderColor: rgba(48, 42, 42, 0.65)
 }
 
 * {
