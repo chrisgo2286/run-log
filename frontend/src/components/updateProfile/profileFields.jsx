@@ -1,5 +1,6 @@
 import React from "react";
 import Input from "../miscComponents/input";
+import TextArea from "../miscComponents/textArea";
 import SelectField from "../miscComponents/selectField";
 
 export default function ProfileFields ({ fields, setFields }) {
@@ -34,24 +35,21 @@ export default function ProfileFields ({ fields, setFields }) {
                     data-cy='profile-email' />
             </div>
             <div className="profile-fields-b">
-                <Input
-                    type='text'
+                <TextArea
                     name='preference'
                     value={ fields.preference }
                     fields={ fields }
                     setFields={ setFields }
                     placeholder={ 'Running Preference'}
                     data-cy='profile-preference' />
-                <Input
-                    type='text'
+                <TextArea
                     name='history'
                     value={ fields.history }
                     fields={ fields }
                     setFields={ setFields }
                     placeholder={ 'Running History'}
                     data-cy='profile-history' />
-                <Input
-                    type='text'
+                <TextArea
                     name='description'
                     value={ fields.description }
                     fields={ fields }

@@ -1,25 +1,31 @@
+:root {
+    --selectBorderColor: rgba(33, 48, 40, 0.75);
+    --selectColor: rgba(187, 238, 235, 0.5);
+    --labelColor: rgba(152, 197, 190, 0.5);
+}
+
 .select-pair {
     display: grid;
     grid-template-columns: 1fr 4fr;
     align-items: center;
-    margin: 20px;
+    margin: 10px;
     height: 40px;
     border-radius: 10%;
 }
 
 .select-pair select {
-    background-color: var(--inputColor);
+    background-color: var(--selectColor);
     height: 100%;
-    border: 1px solid var(--inputBorderColor);
-    border-radius: 0px 15px 15px 0px;
+    border: 1px solid var(--selectBorderColor);
+    border-radius: 0px 10px 10px 0px;
     padding-left: 10px;
 }
 
 .select-pair label {
     background-color: var(--labelColor);
     height: 100%;
-    border: 1px solid var(--inputBorderColor);
-    border-radius: 15px 0px 0px 15px;
+    border: 1px solid var(--selectBorderColor);
+    border-radius: 10px 0px 0px 10px;
     text-align: right;
     line-height: 40px;
     padding-right: 10px;

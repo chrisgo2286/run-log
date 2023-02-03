@@ -11,9 +11,6 @@
   --intervalsColor:  rgba(214, 130, 127, 0.5);
   --tempoRunColor:  rgba(204, 177, 102, 0.5);
   --restDayColor:  var(--calendarHeaderColor);
-  --inputBorderColor: rgba(33, 48, 40, 0.75);
-  --inputColor: rgba(102, 204, 185, 0.5);
-  --labelColor: rgba(45, 130, 116, 0.5);
 }
 
 * {

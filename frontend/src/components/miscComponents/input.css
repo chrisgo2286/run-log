@@ -1,16 +1,22 @@
+:root {
+    --inputBorderColor: rgba(33, 48, 40, 0.75);
+    --inputColor: rgba(187, 238, 235, 0.5);
+    --labelColor: rgba(152, 197, 190, 0.5);
+}
+
 .input-pair {
     display: grid;
     grid-template-columns: 1fr 4fr;
     align-items: center;
-    margin: 20px 0px;
-    height: 30px;
+    margin: 10px 0px;
+    height: 40px;
 }
 
 .input-pair input {
     background-color: var(--inputColor);
     height: 100%;
     border: 1px solid var(--inputBorderColor);
-    border-radius: 0px 15px 15px 0px;
+    border-radius: 0px 10px 10px 0px;
     padding-left: 10px;
 }
 
@@ -18,7 +24,7 @@
     background-color: var(--labelColor);
     height: 100%;
     border: 1px solid var(--inputBorderColor);
-    border-radius: 15px 0px 0px 15px;
+    border-radius: 10px 0px 0px 10px;
     text-align: right;
     line-height: 40px;
     padding-right: 10px;
