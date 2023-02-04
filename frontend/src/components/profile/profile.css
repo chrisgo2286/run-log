@@ -1,7 +1,5 @@
 .profile {
     margin: 0px auto;
-    width: 80%;
-    max-width: 1000px;
     height: 500px;
     border: 1px solid var(--siteBorderColor);
     display: flex;
@@ -12,9 +10,4 @@
     margin: 10px 0px;
     display: flex;
     justify-content: center;
-}
-
-.profile .button {
-    width: 25%;
-    margin: 25px auto;
 }
