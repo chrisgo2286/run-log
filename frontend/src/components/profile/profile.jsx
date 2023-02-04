@@ -1,15 +1,14 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { getProfile } from "../../misc/apiCalls";
-import { UserContext } from "../../misc/context";
 import { navigateToUpdateProfile } from "../../misc/navFunctions";
+import ProfileHeader from "./profileHeader";
 import ProfileItem from "./profileItem";
 import Button from '../miscComponents/button';
 import Card from "../miscComponents/card/card";
 import './profile.css';
 
 export default function Profile () {
-    const user = useContext(UserContext)[0];
     const navigate = useNavigate();
     const [profile, setProfile ] = useState({
         id: '',
@@ -27,17 +26,6 @@ export default function Profile () {
 
     function handleNavToUpdateProfile () {
         navigateToUpdateProfile(navigate, profile);
-    }
-
-    function profileHeader () {
-        return (
-            <React.Fragment>
-                <ProfileItem label='Username' data={ user.username } />
-                <ProfileItem label='Age' data={ profile.age } />
-                <ProfileItem label='Gender' data={ profile.gender } />
-                <ProfileItem label='Email' data={ profile.email } />
-            </React.Fragment>
-        )
     }
 
     function profileBody () {
@@ -58,7 +46,7 @@ export default function Profile () {
 
     return (
         <Card
-            header={ profileHeader() }
+            header={ <ProfileHeader profile={ profile } /> }
             body={ profileBody() }
             footer={ profileFooter() } />
     )
