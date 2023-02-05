@@ -1,6 +1,6 @@
 import React from "react";
-import Input from "../miscComponents/input";
-import SelectField from "../miscComponents/selectField";
+import Input from "../miscComponents/input/input";
+import SelectField from "../miscComponents/selectField/selectField";
 
 export default function RunFields ({ fields, setFields }) {
     const options = ['Easy Run', 'Long Run', 'Intervals', 'Tempo Run']

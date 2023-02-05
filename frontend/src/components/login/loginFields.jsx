@@ -1,5 +1,5 @@
 import React from "react";
-import Input from "../miscComponents/input";
+import Input from "../miscComponents/input/input";
 
 export default function LoginFields ({ fields, setFields }) {
     return (

@@ -1,5 +1,4 @@
 import React from "react"
-import Button from "../miscComponents/button"
 
 export default function Home () {
     return (

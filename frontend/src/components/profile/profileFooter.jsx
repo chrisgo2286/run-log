@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { navigateToUpdateProfile } from "../../misc/navFunctions";
-import Button from "../miscComponents/button"
+import Button from "../miscComponents/button/button";
 
 export default function ProfileFooter ({ profile }) {
     
