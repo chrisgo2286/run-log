@@ -64,3 +64,12 @@ export function patchProfile (profile_id, fields) {
         console.log(response);
     })
 }
+
+// Search Profiles API Calls
+
+export const getProfiles = async (setProfiles) => {
+    const result = await axios.get('/api/profiles/search/', {
+        params: { username: 'elaine' }
+    })
+    setProfiles(result.data)
+}
