@@ -6,11 +6,11 @@ export default function ProfileHeader ({ profile }) {
     const user = useContext(UserContext)[0];
 
     return (
-        <React.Fragment>
+        <div className='profile-header'>
             <ProfileItem label='Username' data={ user.username } />
             <ProfileItem label='Age' data={ profile.age } />
             <ProfileItem label='Gender' data={ profile.gender } />
             <ProfileItem label='Email' data={ profile.email } />
-        </React.Fragment>
+        </div>
     )
 }
