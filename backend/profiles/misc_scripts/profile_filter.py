@@ -15,7 +15,7 @@ class ProfileFilter:
     def filter_profiles(self):
         for filter, arg in self.params.items():
             self.filter_dict[filter](arg)
-        return self.profiles
+        return self.profiles.objects.values()
 
     def filter_by_username(self, username):
         """Filters profiles by username"""

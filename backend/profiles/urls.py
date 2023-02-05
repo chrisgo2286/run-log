@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import stat_view
+from .views import search_profiles_view
 
 urlpatterns = [
-    path('profile/', stat_view),
+    path('profiles/search/', search_profiles_view),
 ]
