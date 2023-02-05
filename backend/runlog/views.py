@@ -16,6 +16,10 @@ class RunView(viewsets.ModelViewSet):
         return serializer.save(owner=self.request.user)
 
     def get_queryset(self):
+        # if self.request.query_params.get('publicUser'):
+        #     user = self.request.query_params.get('publicUser')
+        #     # Check if user is public
+        #     return self.queryset.filter(owner=user)
         return self.queryset.filter(owner=self.request.user)
 
 @api_view(('GET',))
