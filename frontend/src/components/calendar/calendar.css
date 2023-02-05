@@ -14,16 +14,8 @@
     border-radius: 5px;
 }
 
-.calendar-title, .month-prior, .month-after {
+.calendar-title {
     font-size: 50px;
-}
-
-.month-prior {
-    margin-left: 50px;
-}
-
-.month-after {
-    margin-right: 50px;
 }
 
 .body {
