@@ -18,5 +18,5 @@ class ProfileView(viewsets.ModelViewSet):
         return self.queryset.filter(owner=self.request.user)
 
 @api_view(('GET',))
-def stat_view(request):
-    pass
+def search_profiles_view(request):
+       
