@@ -1,5 +1,6 @@
 from profiles.models import Profile
 from django.contrib.auth.models import User
+from django.db.models import Value, CharField
 
 class ProfileFilter:
     """Object to filter all Profile objects based on given paramaters"""
@@ -15,7 +16,6 @@ class ProfileFilter:
     def filter_profiles(self):
         for filter, arg in self.params.items():
             self.filter_dict[filter](arg)
-        print(self.profiles.values())
         return self.profiles.values()
 
     def filter_by_username(self, username):

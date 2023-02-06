@@ -69,7 +69,7 @@ export function patchProfile (profile_id, fields) {
 
 export const getProfiles = async (setProfiles) => {
     const result = await axios.get('/api/search/', {
-        params: { username: 'elaine' }
+        
     })
     setProfiles(result.data)
 }
