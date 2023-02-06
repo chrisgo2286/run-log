@@ -22,4 +22,5 @@ class ProfileView(viewsets.ModelViewSet):
 def search_profiles_view(request):
     filter = ProfileFilter(**request.query_params)
     profiles = filter.filter_profiles()
-    Response(profiles)
+    print(profiles)
+    return Response(profiles)
