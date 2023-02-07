@@ -71,7 +71,6 @@ export const getProfiles = async (setProfiles, filters) => {
     const result = await axios.get('/api/search/', {
         params: filters
     })
-    console.log(result.data)
     setProfiles(result.data)
     return result.data
 }

@@ -1,0 +1,11 @@
+.search-results-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.search-results-body .card {
+    max-width: 150px;
+    max-height: 150px;
+    margin: 10px;
+}
