@@ -4,6 +4,7 @@ import Calendar from './components/calendar/calendar';
 import Profile from './components/profile/profile';
 import UpdateProfile from './components/updateProfile/updateProfile';
 import ProfileSearch from './components/profileSearch/profileSearch';
+import SearchResults from './components/searchResults/searchResults';
 import NavBar from './components/navBar/navBar';
 import Home from './components/home/home';
 import AddRun from './components/runDetail/addRun';
@@ -44,6 +45,7 @@ export default function App () {
                         <Route path='/profile' element={ <Profile />} />
                         <Route path='/update_profile' element={ <UpdateProfile />} />
                         <Route path='/profile_search' element={ <ProfileSearch />} />
+                        <Route path='/search_results' element={ <SearchResults />} />
                         <Route path='/add_run' element={ <AddRun /> } />
                         <Route path='/update_run' element={ <UpdateRun /> } />
                         <Route path='/register' element={ <Register /> } />

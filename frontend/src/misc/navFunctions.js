@@ -20,3 +20,7 @@ export function navigateToUpdateRun (navigate, date, day) {
 export function navigateToUpdateProfile (navigate, profile) {
     navigate('/update_profile', { state: profile })
 }
+
+export function navigateToSearchResults (navigate, profiles) {
+    navigate('/search_results', { state: profiles })
+}
