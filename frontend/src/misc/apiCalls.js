@@ -52,10 +52,14 @@ export async function postLogout () {
 
 // Profile API Calls
 
-export const getProfile = async (setProfile) => {
-    const result = await axios.get('/api/profiles/', {
-    })
-    setProfile(result.data[0])
+export const getUserProfile = async () => {
+    const result = await axios.get('/api/profiles/')
+    return result.data[0];
+}
+
+export const getProfile = async (profile_id) => {
+    const result = await axios.get('/api/profiles/' + profile_id + '/')
+    return result.data
 }
 
 export function patchProfile (profile_id, fields) {

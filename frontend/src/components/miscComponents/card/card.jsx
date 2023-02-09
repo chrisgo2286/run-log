@@ -1,9 +1,9 @@
 import React from "react";
 import './card.css';
 
-export default function Card ({ header, body, footer }) {
+export default function Card ({ header, body, footer, ...other }) {
     return (
-        <div className='card'>
+        <div className='card' { ...other }>
             <div className='card-header'>
                 { header }
             </div>

@@ -7,7 +7,7 @@ export default function ProfileHeader ({ profile }) {
 
     return (
         <div className='profile-header'>
-            <ProfileItem label='Username' data={ user.username } />
+            <ProfileItem label='Username' data={ profile.username } />
             <ProfileItem label='Age' data={ profile.age } />
             <ProfileItem label='Gender' data={ profile.gender } />
             <ProfileItem label='Email' data={ profile.email } />

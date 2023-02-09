@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { navigateToPublicProfile } from '../../misc/navFunctions';
 import Card from '../miscComponents/card/card';
 
 export default function SearchItem ({ profile }) {
+    const navigate = useNavigate()
     const cardHeader = (
         <div>Username: { profile.username }</div>
     )
@@ -13,7 +16,19 @@ export default function SearchItem ({ profile }) {
         </React.Fragment>
     )
 
+    const cardFooter = (
+        <div>Link to Calendar</div>
+    )
+
+    function handleClick () {
+        navigateToPublicProfile(navigate, profile.id)
+    }
+
     return (
-        <Card header={ cardHeader } body={ cardBody } footer={ null } />
+        <Card 
+            header={ cardHeader } 
+            body={ cardBody } 
+            footer={ cardFooter }
+            onClick={ handleClick } />
     )
 }

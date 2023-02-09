@@ -24,3 +24,7 @@ export function navigateToUpdateProfile (navigate, profile) {
 export function navigateToSearchResults (navigate, profiles) {
     navigate('/search_results', { state: profiles })
 }
+
+export function navigateToPublicProfile (navigate, profile_id) {
+    navigate('/public_profile', { state: { profile_id: profile_id }})
+}

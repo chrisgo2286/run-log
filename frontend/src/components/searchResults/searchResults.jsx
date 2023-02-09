@@ -4,7 +4,6 @@ import './searchResults.css';
 
 export default function SearchResults () {
     const profiles = useLocation().state
-    console.log(profiles)
     return (
         <div className='search-results'>
             <div className='search-results-header'>Search Results</div>
