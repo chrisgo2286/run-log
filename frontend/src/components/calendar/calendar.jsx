@@ -11,7 +11,10 @@ export default function Calendar () {
     const [days, setDays] = useState([])
 
     useEffect(() => {
-        fetchData(month, setDays);
+        fetchData(month)
+        .then((data) => {
+            setDays(data);
+        })
     }, [month]);
 
     return (

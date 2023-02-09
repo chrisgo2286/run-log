@@ -6,11 +6,10 @@ import { navigateToSearchResults } from '../../misc/navFunctions';
 
 export default function ProfileSearch () {
     const navigate = useNavigate();
-    const [ profiles, setProfiles ] = useState([]);
     const [ filters, setFilters ] = useState({});
 
     function handleSubmit () {
-        getProfiles(setProfiles, filters)
+        getProfiles(filters)
             .then((profiles) => {
                 navigateToSearchResults(navigate, profiles)
             })

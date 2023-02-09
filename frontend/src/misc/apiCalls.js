@@ -2,11 +2,11 @@ import axios from "axios";
 
 // Calendar API Calls
 
-export const fetchData = async (month, setDays) => {
+export const fetchData = async (month) => {
     const result = await axios.get('/api/calendar/', {
         params: { month: month.number, year: month.year }
     });
-    setDays(result.data);
+    return result.data
 }
 
 export function patchRun (run_id, fields) {
@@ -71,10 +71,9 @@ export function patchProfile (profile_id, fields) {
 
 // Search Profiles API Calls
 
-export const getProfiles = async (setProfiles, filters) => {
+export const getProfiles = async (filters) => {
     const result = await axios.get('/api/search/', {
         params: filters
     })
-    setProfiles(result.data)
     return result.data
 }
