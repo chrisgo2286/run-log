@@ -20,7 +20,7 @@ export default function UpdateProfile () {
 
     function handleSubmit () {
         patchProfile(id, fields)
-        navigate('/profile');
+        navigate('/user_profile');
     }
 
     return (
