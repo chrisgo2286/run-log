@@ -9,7 +9,8 @@ class ProfileFilter:
         self.profiles = Profile.objects.filter(privacy='Public')
         self.filter_dict = {
             'username': self.filter_by_username,
-            'age': self.filter_by_age,
+            'age_min': self.filter_by_age_min,
+            'age_max': self.filter_by_age_max,
             'gender': self.filter_by_gender
         }
 
@@ -23,13 +24,14 @@ class ProfileFilter:
         user = User.objects.filter(username=username[0])[0]
         self.profiles = self.profiles.filter(owner=user)
 
-    def filter_by_age(self, age_tuple):
-        """Filters by age_min and age_max"""
-        self.profiles = self.profiles.filter(
-            age__gte=age_tuple[0], 
-            age__lte=age_tuple[1]
-        )
+    def filter_by_age_min(self, age_min):
+        """Filters by age_min"""
+        self.profiles = self.profiles.filter(age__gte=age_min)
     
+    def filter_by_age_max(self, age_max):
+        """Filters by age_max"""
+        self.profiles = self.profiles.filter(age__lte=age_max)
+
     def filter_by_gender(self, gender):
         """Filters by gender"""
         self.profiles = self.profiles.filter(gender=gender)
