@@ -16,12 +16,13 @@ class ProfileFilter:
 
     def filter_profiles(self):
         for filter, arg in self.params.items():
-            self.filter_dict[filter](arg)
+            if arg[0]:
+                self.filter_dict[filter](arg[0])
         return self.profiles.values()
 
     def filter_by_username(self, username):
         """Filters profiles by username"""
-        user = User.objects.filter(username=username[0])[0]
+        user = User.objects.filter(username=username)[0]
         self.profiles = self.profiles.filter(owner=user)
 
     def filter_by_age_min(self, age_min):

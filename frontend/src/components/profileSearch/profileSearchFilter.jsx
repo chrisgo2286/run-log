@@ -13,13 +13,13 @@ export default function ProfileSearchFilter ({ filters, setFilters }) {
                 setFields={ setFilters } />
             <Input
                 type='integer'
-                name='age-min'
+                name='age_min'
                 value={ filters.age_min }
                 fields={ filters }
                 setFields={ setFilters } />
             <Input
                 type='integer'
-                name='age-max'
+                name='age_max'
                 value={ filters.age_max }
                 fields={ filters }
                 setFields={ setFilters } />
