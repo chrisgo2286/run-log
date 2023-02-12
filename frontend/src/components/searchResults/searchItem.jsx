@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { navigateToPublicProfile } from '../../misc/navFunctions';
 import Card from '../miscComponents/card/card';
 
-export default function SearchItem ({ profile }) {
+export default function SearchItem ({ profile, profile_ids }) {
     const navigate = useNavigate()
     const cardHeader = (
         <div>Username: { profile.username }</div>
@@ -21,7 +21,7 @@ export default function SearchItem ({ profile }) {
     )
 
     function handleClick () {
-        navigateToPublicProfile(navigate, profile.id)
+        navigateToPublicProfile(navigate, profile.id, profile_ids)
     }
 
     return (

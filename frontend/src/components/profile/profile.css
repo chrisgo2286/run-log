@@ -11,6 +11,17 @@
     flex-direction: column;
 }
 
+.public-profile-header {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+}
+
+.profile-arrow-button {
+    background-color: var(--profileCardHeaderColor);
+    display: flex;
+    align-items: center;
+}
+
 .profile-header {
     display: flex;
     flex-direction: column;
