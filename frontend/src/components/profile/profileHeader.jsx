@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../misc/context";
-import ProfileItem from "./profileItem";
 
 export default function ProfileHeader ({ profile }) {
     const user = useContext(UserContext)[0];

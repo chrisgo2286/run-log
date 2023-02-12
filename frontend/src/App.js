@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Calendar from './components/calendar/calendar';
-import PublicProfile from './components/profile/publicProfile';
+import PublicProfile from './components/profile/publicProfile/publicProfile';
 import UserProfile from './components/profile/userProfile';
 import UpdateProfile from './components/updateProfile/updateProfile';
 import ProfileSearch from './components/profileSearch/profileSearch';

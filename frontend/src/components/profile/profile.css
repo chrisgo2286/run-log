@@ -25,12 +25,18 @@
     font-size: 30px;
 }
 
-.profile .card-body {
+.profile-body {
     padding: 10px 40px;
+    display: flex;
+    flex-direction: column;
 }
 
-.profile-item {
+.profile-body-item {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
     margin: 10px 0px;
-    display: flex;
-    justify-content: center;
+}
+
+.profile-footer .button {
+    margin: 0px auto 20px auto;
 }

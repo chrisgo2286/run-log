@@ -11,6 +11,8 @@ export default function ProfileFooter ({ profile }) {
     }
 
     return (
-        <Button onClick={ handleNavToEdit } label='Edit' />
+        <div className='profile-footer'>
+            <Button onClick={ handleNavToEdit } label='Edit' />
+        </div>
     )
 }
