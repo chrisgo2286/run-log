@@ -27,10 +27,12 @@ export default function UserProfile () {
     }, [])
 
     return (
-        <Card
-            header={ <ProfileHeader profile={ profile } /> }
-            body={ <ProfileBody profile={ profile } /> }
-            footer={ <ProfileFooter profile={ profile } /> } 
-        />
+        <div className='profile'>
+            <Card
+                header={ <ProfileHeader profile={ profile } /> }
+                body={ <ProfileBody profile={ profile } /> }
+                footer={ <ProfileFooter profile={ profile } /> } 
+            />
+        </div>
     )
 }

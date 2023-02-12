@@ -7,10 +7,9 @@ export default function ProfileHeader ({ profile }) {
 
     return (
         <div className='profile-header'>
-            <ProfileItem label='Username' data={ profile.username } />
-            <ProfileItem label='Age' data={ profile.age } />
-            <ProfileItem label='Gender' data={ profile.gender } />
-            <ProfileItem label='Email' data={ profile.email } />
+            <div className='profile-username'>{ profile.username }</div>
+            <div className='profile-gender-age'>{ profile.gender } - { profile.age } yrs.</div>
+            <div className='profile-email'>{ profile.email }</div>
         </div>
     )
 }

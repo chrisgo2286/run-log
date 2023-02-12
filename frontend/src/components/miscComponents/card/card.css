@@ -3,14 +3,5 @@
 }
 
 .card {
-    margin: 20px auto;
-    padding: 10px 20px;
-    width: 600px;
     border: 1px solid var(--cardBorderColor)
-}
-
-.card-header,
-.card-body,
-.card-footer {
-    margin-top: 40px;
 }
