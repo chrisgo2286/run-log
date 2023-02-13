@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './arrowButton.css';
 
-export default function ArrowButton ({ onClick, label }) {
+export default function ArrowButton ({ onClick, label, ...other }) {
     const [ ishovered, setIsHovered ] = useState(false)
 
     function toggleHover () {
@@ -17,7 +17,8 @@ export default function ArrowButton ({ onClick, label }) {
             className={ buildClass() } 
             onClick={ onClick }
             onMouseEnter={ toggleHover }
-            onMouseLeave={ toggleHover } >
+            onMouseLeave={ toggleHover } 
+            { ...other }>
             { label }
         </div>
     )

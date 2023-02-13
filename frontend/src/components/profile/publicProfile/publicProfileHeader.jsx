@@ -6,30 +6,40 @@ import { findPreviousProfile, findNextProfile } from "../../../misc/profileFunct
 
 export default function PublicProfileHeader ({ profile, profile_ids }) {
     const navigate = useNavigate();
+    const previous_id = findPreviousProfile(profile.id, profile_ids)
+    const next_id = findNextProfile(profile.id, profile_ids)
 
-    function handlePreviousProfile () {
-        const previous_id = findPreviousProfile(profile.id, profile_ids)
+    function handlePreviousProfile () {    
         navigateToPublicProfile(navigate, previous_id, profile_ids)
     }
 
     function handleNextProfile () {
-        const next_id = findNextProfile(profile.id, profile_ids)
         navigateToPublicProfile(navigate, next_id, profile_ids)
+    }
+
+    function handlePriorArrowHidden () {
+        return (previous_id >= 0) ? false: true;
+    }
+
+    function handleNextArrowHidden () {
+        return (next_id) ? false: true;
     }
 
     return (
         <div className='public-profile-header'>
-            
             <div className='profile-arrow-button'>
-                <ArrowButton onClick={ handlePreviousProfile } label='&#8678;'/>
+                <ArrowButton 
+                    onClick={ handlePreviousProfile } 
+                    label='&#8678;'
+                    hidden={ handlePriorArrowHidden() }/>
             </div>
-            
             <ProfileHeader profile={ profile } />   
-            
             <div className='profile-arrow-button'>
-                <ArrowButton onClick={ handleNextProfile } label='&#8680;'/>
+                <ArrowButton 
+                    onClick={ handleNextProfile } 
+                    label='&#8680;'
+                    hidden={ handleNextArrowHidden() }/>
             </div>
-
         </div>
     )
 }
