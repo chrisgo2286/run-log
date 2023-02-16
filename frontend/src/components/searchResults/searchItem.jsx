@@ -6,18 +6,22 @@ import Card from '../miscComponents/card/card';
 export default function SearchItem ({ profile, profile_ids }) {
     const navigate = useNavigate()
     const cardHeader = (
-        <div>Username: { profile.username }</div>
+        <div className='search-item-header'>
+            <div className='search-item-username'>{ profile.username }</div>
+            <div>{ profile.gender } - { profile.age } yrs.</div>
+        </div>
     )
 
     const cardBody = (
-        <React.Fragment>
-            <div>Age: { profile.age }</div>
-            <div>Gender: { profile.gender }</div>
-        </React.Fragment>
+        <div className='search-item-body'>
+            <div>{ profile.preference }</div>
+            <div>{ profile.history }</div>
+            <div>{ profile.description }</div>
+        </div>
     )
 
     const cardFooter = (
-        <div>Link to Calendar</div>
+        <div className='search-item-footer'>Link to Calendar</div>
     )
 
     function handleClick () {
