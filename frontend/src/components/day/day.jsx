@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { pullDay, buildClass, isFutureDate } from "./dayFunctions";
+import { pullDay, buildClass } from "./dayFunctions";
 import { formatDate } from "../../misc/calendarFunctions";
 import { navigateToAddRun, navigateToUpdateRun } from "../../misc/navFunctions";
 import './day.css';

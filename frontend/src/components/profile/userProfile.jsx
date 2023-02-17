@@ -31,7 +31,8 @@ export default function UserProfile () {
             <Card
                 header={ <ProfileHeader profile={ profile } /> }
                 body={ <ProfileBody profile={ profile } /> }
-                footer={ <ProfileFooter profile={ profile } /> } 
+                footer={ <ProfileFooter profile={ profile } /> }
+                hover={ false } 
             />
         </div>
     )

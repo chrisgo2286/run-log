@@ -6,7 +6,6 @@
     margin: 0px auto;
     width: 50%;
     max-width: 1000px;
-    border: 1px solid var(--siteBorderColor);
     display: flex;
     flex-direction: column;
 }

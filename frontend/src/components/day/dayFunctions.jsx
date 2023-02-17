@@ -40,7 +40,7 @@ export function buildClass (day, isHovered, dateObj) {
     }
     
     if (day.day_num != 'x' && isHovered) {
-        className = className + ' ' + 'hover';
+        className = className + ' ' + 'day-hover';
     }
 
     if (curDate < dateObj) {

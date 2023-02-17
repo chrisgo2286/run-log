@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import './card.css';
 
-export default function Card ({ header, body, footer, ...other }) {
+export default function Card ({ header, body, footer, hover=true, ...other }) {
+    const [ ishovered, setIsHovered ] = useState(false);
+
+    function toggleHover () {
+        setIsHovered(!ishovered);
+    }
+
+    function handleClass () {
+        return (ishovered && hover) ? 'card card-hover': 'card';
+    }
+
     return (
-        <div className='card' { ...other }>
+        <div 
+            className={ handleClass() }
+            onMouseEnter={ toggleHover }
+            onMouseLeave={ toggleHover } 
+            { ...other } >
+
             <div className='card-header'>
                 { header }
             </div>

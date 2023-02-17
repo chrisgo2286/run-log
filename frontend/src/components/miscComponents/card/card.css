@@ -5,3 +5,9 @@
 .card {
     border: 1px solid var(--cardBorderColor)
 }
+
+.card-hover {
+    border: 2px solid var(--cardBorderColor);
+    cursor: pointer;
+    opacity: 80%;
+}

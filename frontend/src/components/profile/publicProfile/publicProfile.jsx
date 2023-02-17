@@ -36,7 +36,8 @@ export default function PublicProfile () {
                     profile={ profile } 
                     profile_ids={ profile_ids }/> }
                 body={ <ProfileBody profile={ profile } /> }
-                footer={ <PublicProfileFooter profile={ profile } /> } 
+                footer={ <PublicProfileFooter profile={ profile } /> }
+                hover={ false } 
             />
         </div>
     )
