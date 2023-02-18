@@ -1,5 +1,6 @@
 import Input from '../miscComponents/input/input';
 import SelectField from '../miscComponents/selectField/selectField';
+import './profileSearch.css';
 
 export default function ProfileSearchFilter ({ filters, setFilters }) {
 

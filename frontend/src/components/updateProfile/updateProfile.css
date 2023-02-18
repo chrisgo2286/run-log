@@ -7,8 +7,8 @@
 }
 
 .profile-fields-a {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .profile-fields-b {
@@ -19,6 +19,7 @@
 
 .update-profile .button {
     margin: 25px auto;
+    width: 20%;
 }
 
 .profile-fields-a label {

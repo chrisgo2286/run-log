@@ -23,7 +23,6 @@ export default function ProfileSearch () {
 
     return (
         <div className='profile-search'>
-            <div>PROFILE SEARCH</div>
             <ProfileSearchFilter filters={ filters } setFilters={ setFilters } />
             <Button onClick={ handleSubmit } label='Search' />    
         </div>
