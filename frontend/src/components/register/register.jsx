@@ -4,6 +4,7 @@ import { UserContext } from '../../misc/context';
 import { postRegistration } from '../../misc/apiCalls';
 import { updateLocalStorage } from '../../misc/userFunctions';
 import { updateUser } from '../../misc/userFunctions';
+import ValidationErrors from '../miscComponents/validationErrors/validationErrors';
 import NewUserFields from './newUserFields';
 import Button from '../miscComponents/button/button';
 import './register.css';
@@ -16,8 +17,15 @@ export default function Register () {
         password1: '',
         password2: '',
     })
+    const [errors, setErrors] = useState([])
 
     async function handleSubmit () {
+
+        const newErrors = validateRegistration(credentials);
+            if (newErrors) {
+                setErrors(newErrors);
+                return null;
+            }        
 
         const response = await postRegistration(credentials);
         
@@ -36,6 +44,7 @@ export default function Register () {
                 onClick={ handleSubmit } 
                 label='Register' 
                 data-cy='register-btn' />
+            <ValidationErrors errors={ errors } />
         </div>
     )
 }

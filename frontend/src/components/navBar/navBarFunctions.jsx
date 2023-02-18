@@ -19,3 +19,25 @@ export function userLinksLoggedOut () {
         </React.Fragment>
     )
 }
+
+export function siteLinksLoggedIn () {
+    return (
+        <React.Fragment>
+            <Link to='/'>Home</Link>
+            <Link to='/user_profile'>Profile</Link>
+            <Link to='/calendar'>Calendar</Link>
+            <Link to='/profile_search'>Search</Link>
+        </React.Fragment>
+    )
+}
+
+export function siteLinksLoggedOut () {
+    return (
+        <React.Fragment>
+            <Link to='/login'>Home</Link>
+            <Link to='/login'>Profile</Link>
+            <Link to='/login'>Calendar</Link>
+            <Link to='/login'>Search</Link>
+        </React.Fragment>
+    )
+}
