@@ -5,6 +5,8 @@ import { postRegistration } from '../../misc/apiCalls';
 import { updateLocalStorage } from '../../misc/userFunctions';
 import { updateUser } from '../../misc/userFunctions';
 import NewUserFields from './newUserFields';
+import Button from '../miscComponents/button/button';
+import './register.css';
 
 export default function Register () {
     const [user, setUser] = useContext(UserContext);
@@ -30,7 +32,10 @@ export default function Register () {
     return (
         <div className="register" data-cy='register-link'>
             <NewUserFields fields={ credentials } setFields={ setCredentials }/>
-            <button onClick={ handleSubmit } data-cy='register-btn'>SUBMIT</button>
+            <Button 
+                onClick={ handleSubmit } 
+                label='Register' 
+                data-cy='register-btn' />
         </div>
     )
 }

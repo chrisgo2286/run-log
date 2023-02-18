@@ -4,6 +4,8 @@ import { UserContext } from '../../misc/context';
 import { postLogin } from '../../misc/apiCalls';
 import { updateLocalStorage, updateUser } from '../../misc/userFunctions';
 import LoginFields from './loginFields';
+import Button from '../miscComponents/button/button';
+import './login.css';
 
 export default function Login () {
     const [user, setUser] = useContext(UserContext);
@@ -27,7 +29,7 @@ export default function Login () {
     return (
         <div className="login">
             <LoginFields fields={ credentials } setFields={ setCredentials } />
-            <button onClick={ handleSubmit } data-cy='login-btn'>SUBMIT</button>
+            <Button onClick={ handleSubmit } label='Login' data-cy='login-btn' />
         </div>
     )
 }

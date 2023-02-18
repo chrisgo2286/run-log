@@ -1,7 +1,6 @@
 :root {
     --textAreaBorderColor: rgba(33, 48, 40, 0.75);
-    --textAreaColor: rgba(187, 238, 235, 0.5);
-    --labelColor: rgba(152, 197, 190, 0.5);
+    --textAreaBGColor: rgba(128, 255, 187, 0.25);
 }
 
 .text-area-pair {
@@ -9,22 +8,19 @@
     grid-template-columns: 1fr 4fr;
     align-items: center;
     margin: 10px 0px;
+    background-color: var(--textAreaBGColor);
 }
 
 .text-area-pair textArea {
-    background-color: var(--textAreaColor);
     height: 80px;
     border: 1px solid var(--textAreaBorderColor);
-    border-radius: 0px 15px 15px 0px;
     padding: 10px;
     resize: none;
 }
 
 .text-area-pair label {
-    background-color: var(--labelColor);
     height: 80px;
     border: 1px solid var(--textAreaBorderColor);
-    border-radius: 15px 0px 0px 15px;
     text-align: right;
     line-height: 80px;
     padding: 10px;
@@ -34,4 +30,5 @@
 .text-area-hover {
     opacity: 80%;
     cursor: pointer;
+    border: 2px solid var(--textAreaBorderColor)
 }

@@ -1,0 +1,9 @@
+.register {
+    width: 50%;
+    margin: 10px auto;
+}
+
+.register .button {
+    width: 20%;
+    margin: 20px auto;
+}
