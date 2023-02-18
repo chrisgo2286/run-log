@@ -5,8 +5,13 @@ import {
 } from "./validationRules"
 
 export function validateRegistration ({ username, password1, password2 }) {
-    errors = []
-    if (errors)
-
-
+    const usernameError = validateUsername(username)
+    const password1Error = validatePassword1(password1)
+    const password2Error = validatePassword2(password2)
+    
+    return [
+        ...usernameError ? [usernameError]: [],
+        ...password1Erorr ? [password1]: [],
+        ...password2Error ? [password2]: [],
+    ]
 }
