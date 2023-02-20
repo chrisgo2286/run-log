@@ -16,7 +16,9 @@ export default function CreateProfile () {
     })
 
     function handleSubmit () {
-        createUserProfile(fields)
+        const newFields = { ...fields, owner: '1' };
+        console.log(newFields);
+        createUserProfile(newFields)
         navigate('/user_profile');
     }
 

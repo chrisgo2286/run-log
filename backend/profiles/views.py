@@ -11,7 +11,7 @@ from rest_framework.decorators import api_view
 class ProfileView(viewsets.ModelViewSet):
     serializer_class = ProfileSerializer
     queryset = Profile.objects.all()
-
+    
     def perform_create(self, serializer):
         return serializer.save(owner=self.request.user)
 
