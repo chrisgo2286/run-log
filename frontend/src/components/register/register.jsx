@@ -23,7 +23,7 @@ export default function Register () {
     async function handleSubmit () {
 
         const newErrors = validateRegistration(credentials);
-            if (newErrors) {
+            if (newErrors.length > 0) {
                 setErrors(newErrors);
                 return null;
             }        

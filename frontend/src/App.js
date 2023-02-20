@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Calendar from './components/calendar/calendar';
 import PublicProfile from './components/profile/publicProfile/publicProfile';
 import UserProfile from './components/profile/userProfile';
+import CreateProfile from './components/createProfile/createProfile';
 import UpdateProfile from './components/updateProfile/updateProfile';
 import ProfileSearch from './components/profileSearch/profileSearch';
 import SearchResults from './components/searchResults/searchResults';
@@ -45,6 +46,7 @@ export default function App () {
                         <Route path='/calendar' element={ <Calendar /> } />
                         <Route path='/user_profile' element={ <UserProfile />} />
                         <Route path='/public_profile' element={ <PublicProfile />} />
+                        <Route path='/create_profile' element={ <CreateProfile />} />
                         <Route path='/update_profile' element={ <UpdateProfile />} />
                         <Route path='/profile_search' element={ <ProfileSearch />} />
                         <Route path='/search_results' element={ <SearchResults />} />

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { patchProfile } from '../../misc/apiCalls';
+import { patchUserProfile } from '../../misc/apiCalls';
 import ProfileFields from './profileFields';
 import Button from '../miscComponents/button/button';
 import './updateProfile.css';
@@ -19,7 +19,7 @@ export default function UpdateProfile () {
     })
 
     function handleSubmit () {
-        patchProfile(id, fields)
+        patchUserProfile(id, fields)
         navigate('/user_profile');
     }
 

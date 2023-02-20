@@ -13,13 +13,12 @@ export default function ProfileFields ({ fields, setFields }) {
                     value={ fields.age }
                     fields={ fields }
                     setFields={ setFields }
-                    placeholder={ 'Age'}
                     className="profile-age"
                     data-cy='profile-age' />
                 <SelectField
                     name='gender'
                     initial={ fields.gender }
-                    options={[ 'Male', 'Female' ]}
+                    options={[ '', 'Male', 'Female' ]}
                     fields={ fields }
                     setFields={ setFields }
                     className="profile-gender"
@@ -30,7 +29,6 @@ export default function ProfileFields ({ fields, setFields }) {
                     value={ fields.email }
                     fields={ fields }
                     setFields={ setFields }
-                    placeholder={ 'E-mail'}
                     className="profile-email"
                     data-cy='profile-email' />
             </div>
@@ -40,21 +38,18 @@ export default function ProfileFields ({ fields, setFields }) {
                     value={ fields.preference }
                     fields={ fields }
                     setFields={ setFields }
-                    placeholder={ 'Running Preference'}
                     data-cy='profile-preference' />
                 <TextArea
                     name='history'
                     value={ fields.history }
                     fields={ fields }
                     setFields={ setFields }
-                    placeholder={ 'Running History'}
                     data-cy='profile-history' />
                 <TextArea
                     name='description'
                     value={ fields.description }
                     fields={ fields }
                     setFields={ setFields }
-                    placeholder={ 'About Me'}
                     data-cy='profile-description' />
             </div>
         </React.Fragment>

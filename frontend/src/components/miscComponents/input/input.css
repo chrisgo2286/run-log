@@ -1,5 +1,5 @@
 :root {
-    --inputBorderColor: rgba(33, 48, 40, 0.25);
+    --inputBorderColor: rgba(33, 48, 40, 0.75);
     --inputPairBGColor: rgba(128, 255, 187, 0.25);
 }
 
@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
     align-items: center;
-    margin: 10px;
+    margin: 10px 10px 10px 0px;
     height: 40px;
     background-color: var(--inputPairBGColor);
 }

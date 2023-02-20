@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { getUserProfile } from "../../misc/apiCalls";
 import ProfileHeader from "./profileHeader";
 import ProfileBody from "./profileBody";
@@ -8,6 +9,7 @@ import './profile.css';
 
 export default function UserProfile () {
 
+    const navigate = useNavigate();
     const [profile, setProfile ] = useState({
         id: '',
         username: '',
@@ -22,7 +24,12 @@ export default function UserProfile () {
     useEffect(() => {
         getUserProfile()
         .then((data) => {
-            setProfile(data)
+            if (data) {
+                setProfile(data)
+            } else {
+                navigate('/create_profile');
+            }
+            
         })
     }, [])
 

@@ -32,4 +32,5 @@
 .select-hover {
     opacity: 80%;
     cursor: pointer;
+    border: 2px solid var(--selectBorderColor)
 }
