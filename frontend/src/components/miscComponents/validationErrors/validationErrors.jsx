@@ -1,3 +1,5 @@
+import './validationErrors.css';
+
 export default function ValidationErrors ({ errors }) {
     function handleErrors () {
         if (errors) {
@@ -7,7 +9,7 @@ export default function ValidationErrors ({ errors }) {
                 ))
             )
         } else {
-            return ;
+            return null;
         }
     }
 

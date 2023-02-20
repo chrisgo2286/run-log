@@ -4,6 +4,7 @@ import { UserContext } from '../../misc/context';
 import { postRegistration } from '../../misc/apiCalls';
 import { updateLocalStorage } from '../../misc/userFunctions';
 import { updateUser } from '../../misc/userFunctions';
+import { validateRegistration } from '../../misc/validation/validateRegistration';
 import ValidationErrors from '../miscComponents/validationErrors/validationErrors';
 import NewUserFields from './newUserFields';
 import Button from '../miscComponents/button/button';

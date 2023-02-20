@@ -11,7 +11,7 @@ export function validateRegistration ({ username, password1, password2 }) {
     
     return [
         ...usernameError ? [usernameError]: [],
-        ...password1Erorr ? [password1]: [],
-        ...password2Error ? [password2]: [],
+        ...password1Error ? [password1Error]: [],
+        ...password2Error ? [password2Error]: [],
     ]
 }

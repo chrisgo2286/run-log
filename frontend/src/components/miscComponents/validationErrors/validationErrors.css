@@ -1,0 +1,10 @@
+:root {
+    --validationBGColor: rgba(246, 189, 189, 0.5);
+}
+
+.validation-error {
+    background-color: var(--validationBGColor);
+    margin: 10px 0px;
+    padding: 5px 0px 5px 5%;
+    text-transform: uppercase;
+}
