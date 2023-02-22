@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUserProfile } from '../../misc/apiCalls';
+import { UserContext } from '../../misc/context';
 import ProfileFields from '../updateProfile/profileFields';
 import Button from '../miscComponents/button/button';
 
 export default function CreateProfile () {
     const navigate = useNavigate();
+    const user = useContext(UserContext)[0];
     const [ fields, setFields ] = useState({
+        username: user.username,
         age: '',
         gender: '',
         email: '',
