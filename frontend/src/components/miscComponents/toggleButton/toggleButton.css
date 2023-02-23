@@ -1,0 +1,26 @@
+:root {
+    --toggleButtonBorderColor:  rgba(33, 48, 40, 0.75);
+    --toggleButtonBGColor:  rgba(128, 255, 187, 0.25);
+}
+
+.toggle-button {
+    display: flex;
+    flex-direction: row;
+}
+
+.toggle-clicked,
+.toggle-unclicked {
+    width: 80px;
+    height: 30px;
+    border: 1px solid var(--toggleButtonBorderColor);
+    background-color: var(--toggleButtonBGColor);
+}
+
+.toggle-choice {
+    text-transform: uppercase;
+    line-height: 30px;
+    margin-left: 10px;
+}
+.toggle-clicked {
+    opacity: 50%;
+}

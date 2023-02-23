@@ -2,6 +2,7 @@ import React from "react";
 import Input from "../miscComponents/input/input";
 import TextArea from "../miscComponents/textArea/textArea";
 import SelectField from "../miscComponents/selectField/selectField";
+import ToggleButton from "../miscComponents/toggleButton/toggleButton";
 
 export default function ProfileFields ({ fields, setFields }) {
     return (
@@ -53,14 +54,12 @@ export default function ProfileFields ({ fields, setFields }) {
                     data-cy='profile-description' />
             </div>
             <div className='profile-fields-c'>
-                <SelectField
+                <ToggleButton
                     name='privacy'
-                    initial={ fields.privacy }
-                    options={[ 'Private', 'Public' ]}
+                    init_choice={ fields.privacy }
+                    alt_choice={ fields.privacy === 'Public' ? 'Private': 'Public' }
                     fields={ fields }
-                    setFields={ setFields }
-                    className='profile-privacy'
-                    data-cy='profile-privacy' />
+                    setFields={ setFields } />
             </div>
 
         </React.Fragment>
