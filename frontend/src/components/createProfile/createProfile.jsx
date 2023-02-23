@@ -15,12 +15,12 @@ export default function CreateProfile () {
         email: '',
         preference: '',
         history: '',
-        description: ''
+        description: '',
+        privacy: 'Private'
     })
 
     function handleSubmit () {
         const newFields = { ...fields, owner: '1' };
-        console.log(newFields);
         createUserProfile(newFields)
         navigate('/user_profile');
     }
