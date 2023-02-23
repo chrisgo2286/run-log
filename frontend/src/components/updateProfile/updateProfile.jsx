@@ -7,7 +7,7 @@ import './updateProfile.css';
 
 export default function UpdateProfile () {
     const profile = useLocation().state;
-    const { id, age, gender, email, preference, history, description } = profile;
+    const { id, age, gender, email, preference, history, description, privacy } = profile;
     const navigate = useNavigate();
     const [ fields, setFields ] = useState({
         age: age,
@@ -15,7 +15,8 @@ export default function UpdateProfile () {
         email: email,
         preference: preference,
         history: history,
-        description: description
+        description: description,
+        privacy: privacy
     })
 
     function handleSubmit () {

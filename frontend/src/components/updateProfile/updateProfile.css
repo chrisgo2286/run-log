@@ -22,9 +22,13 @@
     width: 20%;
 }
 
-.profile-fields-a label {
+.profile-fields-a label,
+.profile-fields-c label {
     width: 60px;
 }
 
+.profile-fields-c {
+    width: 30%;
+}
 
 

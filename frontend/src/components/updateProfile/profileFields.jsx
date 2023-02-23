@@ -52,6 +52,17 @@ export default function ProfileFields ({ fields, setFields }) {
                     setFields={ setFields }
                     data-cy='profile-description' />
             </div>
+            <div className='profile-fields-c'>
+                <SelectField
+                    name='privacy'
+                    initial={ fields.privacy }
+                    options={[ 'Private', 'Public' ]}
+                    fields={ fields }
+                    setFields={ setFields }
+                    className='profile-privacy'
+                    data-cy='profile-privacy' />
+            </div>
+
         </React.Fragment>
     )
 }
