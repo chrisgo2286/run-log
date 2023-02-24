@@ -1,6 +1,7 @@
 import './validationErrors.css';
 
 export default function ValidationErrors ({ errors }) {
+
     function handleErrors () {
         if (errors) {
             return (
