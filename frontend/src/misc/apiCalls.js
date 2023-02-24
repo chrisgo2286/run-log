@@ -39,14 +39,18 @@ export async function postRegistration (credentials) {
 }
 
 export async function postLogin (credentials) {
-    const response = await axios.post('/api/accounts/login/', credentials)
-    console.log(response)
-    return response
+    try {
+        const response = await axios.post('/api/accounts/login/', credentials)
+        console.log(response)
+        return response
+    } catch {
+        console.log('Invalid Credentials')
+        return 'Invalid Credentials';
+    }
 }
 
 export async function postLogout () {
     const response = await axios.post('/api/accounts/logout/')
-    console.log(response)
     return response
 }
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { postRun } from '../../misc/apiCalls';
 import RunFields from './runFields';
+import './runDetail.css';
 
 export default function AddRun () {
 

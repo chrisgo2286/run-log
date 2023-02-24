@@ -21,13 +21,12 @@ export default function Login () {
     async function handleSubmit () {
         const response = await postLogin(credentials);
 
-        if(response.status === 200) {
+        if(response.status && response.status === 200) {
             const token = response.data.key;
             updateLocalStorage(token, credentials.username);
             updateUser(token, credentials.username, user, setUser);
             navigate('/calendar');
         } else {
-            console.log(errorMsg)
             setErrors(errorMsg)
         }
     }

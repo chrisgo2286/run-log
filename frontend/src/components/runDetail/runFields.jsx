@@ -5,7 +5,7 @@ import SelectField from "../miscComponents/selectField/selectField";
 export default function RunFields ({ fields, setFields }) {
     const options = ['Easy Run', 'Long Run', 'Intervals', 'Tempo Run']
     return (
-        <React.Fragment>
+        <div className="run-fields">
             <Input
                 type='date'
                 name='date'
@@ -44,6 +44,6 @@ export default function RunFields ({ fields, setFields }) {
                 setFields={ setFields }
                 placeholder='Comment'
                 data-cy='run-comment' />
-        </React.Fragment>
+        </div>
     )
 }
