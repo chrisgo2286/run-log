@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { postRun } from '../../misc/apiCalls';
 import RunFields from './runFields';
+import Button from '../miscComponents/button/button';
 import './runDetail.css';
 
 export default function AddRun () {
@@ -26,7 +27,7 @@ export default function AddRun () {
     return (
         <div className='add-run'>
             <RunFields fields={ fields } setFields={ setFields } />
-            <button onClick={ handleSubmit } data-cy='add-run-btn'>SUBMIT</button>
+            <Button onClick={ handleSubmit } label='Submit' data-cy='add-run-btn' />
         </div>
     )
 }
