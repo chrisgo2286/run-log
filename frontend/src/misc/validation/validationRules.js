@@ -23,14 +23,19 @@ export function validatePassword2 (password1, password2) {
 }
 
 export function validateDate (date) {
+    const dateObj = new Date(date);
     const earliestDate = new Date(2000, 1, 1);
     const latestDate = new Date(2029, 12, 31);
-    if (date < earliestDate || date > latestDate) {
+    if (dateObj < earliestDate || dateObj > latestDate) {
         return 'Please enter a valid date!'
     }
 }
 
 export function validateDistance (distance) {
+    if (!distance) {
+        return 'Please enter a valid distance!'
+    }
+    
     if (parseFloat(distance) === NaN) {
         return 'Please enter a valid distance!'
     }
@@ -39,4 +44,5 @@ export function validateDistance (distance) {
 export function validateTime (time) {
     if (parseFloat(time) === NaN) {
         return 'Please enter a valid duration!'
+    }
 }
