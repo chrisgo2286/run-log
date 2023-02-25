@@ -21,3 +21,22 @@ export function validatePassword2 (password1, password2) {
         return 'Passwords do not match!'
     }
 }
+
+export function validateDate (date) {
+    const earliestDate = new Date(2000, 1, 1);
+    const latestDate = new Date(2029, 12, 31);
+    if (date < earliestDate || date > latestDate) {
+        return 'Please enter a valid date!'
+    }
+}
+
+export function validateDistance (distance) {
+    if (parseFloat(distance) === NaN) {
+        return 'Please enter a valid distance!'
+    }
+}
+
+export function validateTime (time) {
+    if (parseFloat(time) === NaN) {
+        return 'Please enter a valid duration!'
+}
