@@ -32,17 +32,16 @@ export function validateDate (date) {
 }
 
 export function validateDistance (distance) {
-    
+    const regex = new RegExp(/^\d+\.*\d*$/)
     if (!distance) {
         return 'Please enter a valid distance!'
-    } else if (parseFloat(distance) === NaN) {
+    } else if (!regex.test(distance)) {
         return 'Please enter a valid distance!'
     }
 }
 
 export function validateTime (time) {
     const regex = new RegExp(/^\d+\.*\d*$/)
-    console.log(regex.test(time))
     
     if (!regex.test(time)) {
         return 'Please enter a valid duration!'
