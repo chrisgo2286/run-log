@@ -14,7 +14,7 @@ export default function AddRun () {
     const [ errors, setErrors ] = useState([])
     const [ fields, setFields ] = useState({
         date: date,
-        run_type: '',
+        run_type: 'Easy Run',
         distance: '',
         time: '',
         comment: '',
