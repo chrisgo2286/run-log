@@ -18,7 +18,7 @@
     font-size: 50px;
 }
 
-.body {
+.calendar-body {
     display: flex;
     flex-wrap: wrap;
 }

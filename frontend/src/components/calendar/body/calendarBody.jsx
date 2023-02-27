@@ -7,7 +7,7 @@ export default function CalendarBody ({ days }) {
 
     const [ month, setMonth ] = useContext(MonthContext);
     return (
-        <div className="body">
+        <div className="calendar-body">
             <DaysOfWeek />
             { days.map((day, ndx) => (
                 < Day

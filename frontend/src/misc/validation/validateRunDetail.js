@@ -6,9 +6,6 @@ export function validateRunDetail ({ date, distance, time }) {
     const distanceError = validateDistance(distance);
     const timeError = validateTime(time);
 
-    console.log(dateError)
-    console.log(distanceError)
-    console.log(timeError)
     return [
         ...dateError ? [dateError]: [],
         ...distanceError ? [distanceError]: [],

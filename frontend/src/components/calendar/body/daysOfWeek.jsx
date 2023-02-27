@@ -9,7 +9,7 @@ export default function DaysOfWeek () {
     return (
         <React.Fragment>
             { daysOfWeek.map((dayOfWeek, ndx) =>(
-                <div key={ ndx } className='day-of-week'>
+                <div key={ ndx } className='day-of-week' data-cy={ dayOfWeek }>
                     { dayOfWeek }
                 </div>
             ))}
