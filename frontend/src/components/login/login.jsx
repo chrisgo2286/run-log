@@ -34,7 +34,7 @@ export default function Login () {
     return (
         <div className="login">
             <LoginFields fields={ credentials } setFields={ setCredentials } />
-            <Button onClick={ handleSubmit } label='Login' data-cy='login-btn' />
+            <Button onClick={ handleSubmit } label='Login' data-cy='login-btn'/>
             <ValidationErrors errors={ errors } />
         </div>
     )

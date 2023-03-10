@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './button.css';
 
-export default function Button ({ onClick, label }) {
+export default function Button ({ onClick, label, ...other }) {
     const [ ishovered, setIsHovered ] = useState(false)
 
     function toggleHover () {
@@ -17,7 +17,8 @@ export default function Button ({ onClick, label }) {
             className={ buildClass() } 
             onClick={ onClick }
             onMouseEnter={ toggleHover }
-            onMouseLeave={ toggleHover } >
+            onMouseLeave={ toggleHover } 
+            { ...other }>
             { label }
         </div>
     )
