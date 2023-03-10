@@ -15,6 +15,6 @@ describe('Input Component', () => {
             setFields={ setFields }
         />
     )
-    cy.get('input[name="username"]').should('exist')
+    cy.get('input[data-cy="input-username"]').should('exist')
   })
 })

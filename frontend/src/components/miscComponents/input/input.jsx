@@ -29,6 +29,7 @@ export default function Input ({ type, name, value, fields, setFields, ...other 
                 value={ value }
                 id={ name }
                 onChange={ handleChange }
+                data-cy={'input-' + name}
                 { ...other }
             />
         </div>
