@@ -20,16 +20,25 @@ export default function UserProfile () {
         history: '',
         description: ''
     })
+    const [stats, setStats] = useState({
+        month: 0,
+        year: 0,
+        week: 0
+    })
 
     useEffect(() => {
         getUserProfile()
         .then((data) => {
             if (data) {
-                setProfile(data)
+                setProfile({ ...profile, data })
             } else {
                 navigate('/create_profile');
-            }
-            
+            }   
+        })
+
+        getStats()
+        .then((data) => {
+            setStats({ ...stats, data })
         })
     }, [])
 
