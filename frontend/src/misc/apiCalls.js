@@ -86,3 +86,12 @@ export const getProfiles = async (filters) => {
     })
     return result.data
 }
+
+// Stat API Calls
+
+export const getStats = async (filters) => {
+    const result = await axios.get('/api/stats/', {
+        params: filters
+    })
+    return result.data
+}

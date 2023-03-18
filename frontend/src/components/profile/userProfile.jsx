@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getUserProfile } from "../../misc/apiCalls";
+import { getUserProfile, getStats } from "../../misc/apiCalls";
+import { getMonthNumFromDate, getYear } from "../../misc/calendarFunctions";
 import ProfileHeader from "./profileHeader";
 import ProfileBody from "./profileBody";
 import ProfileFooter from "./profileFooter";
@@ -9,6 +10,7 @@ import './profile.css';
 
 export default function UserProfile () {
 
+    const curDate = new Date()
     const navigate = useNavigate();
     const [profile, setProfile ] = useState({
         id: '',
@@ -20,6 +22,12 @@ export default function UserProfile () {
         history: '',
         description: ''
     })
+
+    const [filters, setFilters] = useState({
+        month: getMonthNumFromDate(curDate),
+        year: getYear(curDate)
+    })
+
     const [stats, setStats] = useState({
         month: 0,
         year: 0,
@@ -30,16 +38,17 @@ export default function UserProfile () {
         getUserProfile()
         .then((data) => {
             if (data) {
-                setProfile({ ...profile, data })
+                setProfile(data)
             } else {
                 navigate('/create_profile');
             }   
         })
 
-        getStats()
-        .then((data) => {
-            setStats({ ...stats, data })
-        })
+        .then(getStats(filters)
+            .then((data) => {
+                setStats(data)
+            })
+        )
     }, [])
 
     return (

@@ -7,8 +7,8 @@ class SummaryStats:
     """Class to compile user run data for Summary Stats section of profile"""
     def __init__(self, user_id, **params):
         self.user_id = user_id
-        self.month = params['month']
-        self.year = params['year']
+        self.month = params['month'][0]
+        self.year = params['year'][0]
         self.runs = Run.objects.filter(owner=self.user_id)
         self.mileage = dict()
 

@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'runlog',
     'profiles',
     'accounts',
+    'stats',
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',

@@ -28,5 +28,6 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('api/', include('runlog.urls')),
     path('api/', include('profiles.urls')),
+    path('api/', include('stats.urls')),
     path('api/accounts/', include('accounts.urls')),
 ]

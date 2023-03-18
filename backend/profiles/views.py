@@ -5,7 +5,6 @@ from rest_framework.decorators import api_view
 from .serializers import ProfileSerializer
 from .models import Profile
 from .misc_scripts.profile_filter import ProfileFilter
-from runlog.misc_scripts.summary_stats import SummaryStats
 
 # Create your views here.
 
@@ -26,9 +25,3 @@ def search_profiles_view(request):
     filter = ProfileFilter(**request.query_params)
     profiles = filter.filter_profiles()
     return Response(profiles)
-
-@api_view(('GET',))
-def stats_view(request):
-    stats = SummaryStats(request.user.id, **request.query_params)
-    stats.pull_data()
-    return Response(stats.mileage)
