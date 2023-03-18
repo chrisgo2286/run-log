@@ -9,7 +9,11 @@ class SummaryStats:
         self.runs = Run.objects.filter(owner=self.user_id)
 
     #Calculate weekly mileage
-    
+    def calc_annual_time(self, year):
+        """Returns total time for given year"""
+        runs = self.filter_runs_by_year(year)
+        return self.calc_time(self, runs)
+
     #Calculate monthly mileage
     def calc_monthly_mileage(self, month, year):
         """Returns total mileage for given month and year"""
@@ -35,3 +39,8 @@ class SummaryStats:
         """Returns total mileage for given runs"""
         sum_dict = runs.aggregate(Sum('distance'))
         return sum_dict['distance__sum']
+
+    def calc_time(self, runs):
+        """Returns total time for given runs"""
+        sum_dict = runs.aggregate(Sum('time'))
+        return sum_dict['time__sum']

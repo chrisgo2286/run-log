@@ -37,7 +37,7 @@ describe('Calendar Page', () => {
             cy.get('input[data-cy="run-distance"]').type(run_distance)
             cy.get('input[data-cy="run-time"]').type(run_time)
             cy.get('input[data-cy="run-comment"]').type(run_comment)
-            cy.get('div[data-cy="add-run-btn"]').click()
+            cy.get('button[data-cy="add-run-btn"]').click()
 
             // Assert submit navigates back to calendar
             cy.url().should('include', 'calendar')
@@ -55,7 +55,7 @@ describe('Calendar Page', () => {
             cy.get('input[data-cy="run-distance"]').clear().type(run_distance2)
             cy.get('input[data-cy="run-time"]').clear().type(run_time2)
             cy.get('input[data-cy="run-comment"]').clear().type(run_comment2)
-            cy.get('div[data-cy="update-run-btn"]').click()
+            cy.get('button[data-cy="update-run-btn"]').click()
 
             // Assert run revised with new data
             cy.get(dayLocator)
@@ -64,7 +64,7 @@ describe('Calendar Page', () => {
 
             // Delete created run
             cy.get(dayLocator).click()
-            cy.get('div[data-cy="delete-run-btn"]').click()
+            cy.get('button[data-cy="delete-run-btn"]').click()
 
             // Assert page navigates to Calendar and run is deleted
             cy.url().should('include', 'calendar')
