@@ -7,6 +7,7 @@ import CreateProfile from './components/createProfile/createProfile';
 import UpdateProfile from './components/updateProfile/updateProfile';
 import ProfileSearch from './components/profileSearch/profileSearch';
 import SearchResults from './components/searchResults/searchResults';
+import Stats from './components/stats/stats';
 import NavBar from './components/navBar/navBar';
 import Home from './components/home/home';
 import AddRun from './components/runDetail/addRun';
@@ -50,6 +51,7 @@ export default function App () {
                         <Route path='/update_profile' element={ <UpdateProfile />} />
                         <Route path='/profile_search' element={ <ProfileSearch />} />
                         <Route path='/search_results' element={ <SearchResults />} />
+                        <Route path='/stats' element={ <Stats />} />
                         <Route path='/add_run' element={ <AddRun /> } />
                         <Route path='/update_run' element={ <UpdateRun /> } />
                         <Route path='/register' element={ <Register /> } />

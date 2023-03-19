@@ -25,6 +25,7 @@ export function siteLinksLoggedIn () {
         <React.Fragment>
             <Link to='/'>Home</Link>
             <Link to='/user_profile'>Profile</Link>
+            <Link to='/stats'>Stats</Link>
             <Link to='/calendar'>Calendar</Link>
             <Link to='/profile_search'>Search</Link>
         </React.Fragment>
@@ -36,6 +37,7 @@ export function siteLinksLoggedOut () {
         <React.Fragment>
             <Link to='/login'>Home</Link>
             <Link to='/login'>Profile</Link>
+            <Link to='/login'>Stats</Link>
             <Link to='/login'>Calendar</Link>
             <Link to='/login'>Search</Link>
         </React.Fragment>
