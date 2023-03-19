@@ -10,15 +10,15 @@ class SummaryStats:
         self.month = int(params['month'][0])
         self.year = int(params['year'][0])
         self.runs = Run.objects.filter(owner=self.user_id)
-        self.mileage = dict()
+        self.summary = dict()
 
     def pull_data(self):
         """Populates data list with monthly mileage, annual mileage and
         average weekly mileage"""
-        self.mileage['month'] = self.calc_monthly_mileage(self.month, 
+        self.summary['month'] = self.calc_monthly_mileage(self.month, 
             self.year)
-        self.mileage['year'] = self.calc_annual_mileage(self.year)
-        self.mileage['week'] = self.calc_weekly_mileage(self.year)
+        self.summary['year'] = self.calc_annual_mileage(self.year)
+        self.summary['week'] = self.calc_weekly_mileage(self.year)
 
     def calc_monthly_mileage(self, month, year):
         """Returns total mileage for given month and year"""
@@ -33,7 +33,7 @@ class SummaryStats:
     def calc_weekly_mileage(self, year):
         """Returns weekly mileage for given year"""
         weeks = self.calc_total_weeks(year)
-        return self.mileage['year'] / weeks
+        return round(self.summary['year'] / weeks, 2)
     
     #Misc Functions
     def filter_runs_by_year(self, year):

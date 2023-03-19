@@ -3,6 +3,7 @@ import StatSummary from "./statSummary"
 import Charts from "./charts"
 import { getMonthNumFromDate, getYear } from "../../misc/calendarFunctions"
 import { getStats } from "../../misc/apiCalls"
+import './stats.css'
 
 export default function Stats () {
     const curDate = new Date()
@@ -10,7 +11,7 @@ export default function Stats () {
         month: getMonthNumFromDate(curDate),
         year: getYear(curDate)
     })
-    const [stats, setStats] = useState([])
+    const [stats, setStats] = useState({})
     
     useEffect(() => {
         getStats(filters)
@@ -20,9 +21,9 @@ export default function Stats () {
     }, [])     
     
     return (
-        <main>
-            <StatSummary />
-            <Charts />
+        <main className='stats'>
+            <StatSummary data={stats} />
+            <Charts data={stats} />
         </main>
     )
 }
