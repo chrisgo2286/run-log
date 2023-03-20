@@ -1,26 +1,29 @@
+from runlog.models import Run
 from stats.misc_scripts.summary_stats import SummaryStats
+from stats.misc_scripts.monthly_mileage import MonthlyMileage
 
 class Stats:
     """Class to compile summary stats and charts into dict"""
     def __init__(self, user_id, **params):
         self.user_id = user_id
         self.params = params
+        self.runs = Run.objects.filter(owner=self.user_id)
         self.data = dict()
 
     def compile(self):
         """Compiles all stats and charts into dict"""
         self.compile_summary()
-        self.compile_chartA()
+        self.compile_monthly_mileage_chart()
         self.compile_chartB()
         self.compile_chartC()
 
     def compile_summary(self):
         """Compile summary stats"""
-        summary_stats = SummaryStats(self.user_id, **self.params)
+        summary_stats = SummaryStats(self.runs, **self.params)
         summary_stats.pull_data()
         self.data['summary'] = summary_stats.summary
 
-    def compile_chartA(self):
+    def compile_monthly_mileage_chart(self):
         """Compiles Rechart data"""
         pass
 

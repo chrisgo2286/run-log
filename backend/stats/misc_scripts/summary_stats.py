@@ -5,11 +5,10 @@ from django.db.models import Sum
 
 class SummaryStats:
     """Class to compile user run data for Summary Stats section of profile"""
-    def __init__(self, user_id, **params):
-        self.user_id = user_id
+    def __init__(self, runs, **params):
+        self.runs = runs
         self.month = int(params['month'][0])
         self.year = int(params['year'][0])
-        self.runs = Run.objects.filter(owner=self.user_id)
         self.summary = dict()
 
     def pull_data(self):
