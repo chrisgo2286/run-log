@@ -16,6 +16,7 @@ export default function Stats () {
     useEffect(() => {
         getStats(filters)
         .then((data) => {
+            console.log(data)
             setStats(data)
         })
     }, [])     
