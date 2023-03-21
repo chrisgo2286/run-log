@@ -1,13 +1,11 @@
-// monthly totals
+import MonthlyTotalsChart from "./charts/monthlyTotalsChart"
 // weekly totals
 // run type composition
 
-export default function Charts () {
+export default function Charts ({ data }) {
     return (
         <section className='charts'>
-            <div className='weekly-totals'>Weekly Totals</div>
-            <div className='monthly-totals' hidden>Monthly Totals</div>
-            <div className='run-type-composition' hidden>Run Type Composition</div>
+            { (data.monthly_chart) ? <MonthlyTotalsChart data={ data.monthly_chart }/>: null}
         </section>
     )
 }
