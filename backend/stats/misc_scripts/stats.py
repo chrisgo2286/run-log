@@ -25,7 +25,7 @@ class Stats:
 
     def compile_monthly_mileage_chart(self):
         """Compiles Rechart data"""
-        monthly_mileage = MonthlyMileage(self.runs, **self.params)
+        monthly_mileage = MonthlyMileage(self.runs)
         monthly_mileage.pull_data()
         self.data['monthly_chart'] = monthly_mileage.data
 
