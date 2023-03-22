@@ -1,6 +1,7 @@
 from runlog.models import Run
 from stats.misc_scripts.summary_stats import SummaryStats
 from stats.misc_scripts.monthly_mileage import MonthlyMileage
+from stats.misc_scripts.weekly_mileage import WeeklyMileage
 
 class Stats:
     """Class to compile summary stats and charts into dict"""
@@ -14,7 +15,7 @@ class Stats:
         """Compiles all stats and charts into dict"""
         self.compile_summary()
         self.compile_monthly_mileage_chart()
-        self.compile_chartB()
+        self.compile_weekly_mileage_chart()
         self.compile_chartC()
 
     def compile_summary(self):
@@ -29,9 +30,11 @@ class Stats:
         monthly_mileage.pull_data()
         self.data['monthly_chart'] = monthly_mileage.data
 
-    def compile_chartB(self):
+    def compile_weekly_mileage_chart(self):
         """Compiles Rechart data"""
-        pass
+        weekly_mileage = WeeklyMileage(self.runs)
+        weekly_mileage.pull_data()
+        self.data['weekly_chart'] = weekly_mileage.data
 
     def compile_chartC(self):
         """Compiles Rechart data"""
