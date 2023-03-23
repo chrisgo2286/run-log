@@ -7,3 +7,8 @@
 .arrow-btn-hover {
     opacity: 50%;
 }
+
+.arrow-btn-disabled {
+    opacity: 30%;
+    cursor: auto;
+}

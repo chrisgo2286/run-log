@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './arrowButton.css';
 
-export default function ArrowButton ({ onClick, label, ...other }) {
+export default function ArrowButton ({ onClick, label, disabled=false, ...other }) {
     const [ ishovered, setIsHovered ] = useState(false)
 
     function toggleHover () {
@@ -9,13 +9,27 @@ export default function ArrowButton ({ onClick, label, ...other }) {
     }
 
     function buildClass () {
-        return (ishovered) ? 'arrow-button arrow-btn-hover': 'arrow-button';
+        let btnClass = 'arrow-button'
+        
+        if(ishovered) {
+            btnClass = btnClass + ' arrow-btn-hover'
+        }
+
+        if(disabled) {
+            btnClass = btnClass + ' arrow-btn-disabled'
+        }
+
+        return btnClass;
+    }
+
+    function handleClick () {
+        return (!disabled) ? onClick() : null;
     }
 
     return (
         <div 
             className={ buildClass() } 
-            onClick={ onClick }
+            onClick={ handleClick }
             onMouseEnter={ toggleHover }
             onMouseLeave={ toggleHover } 
             { ...other }>

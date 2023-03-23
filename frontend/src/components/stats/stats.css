@@ -30,8 +30,12 @@
 }
 
 .charts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     height: 300px;
-    width: 75%;
+    width: 100%;
     margin: 20px auto;
     border: 1px solid var(--siteBorderColor)
 }
+
