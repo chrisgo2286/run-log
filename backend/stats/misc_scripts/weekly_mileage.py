@@ -16,7 +16,7 @@ class WeeklyMileage:
             print(start_date)
             mileage = self.calc_weekly_total(start_date)
             run_obj = { 'start_date': start_date_str, 'distance': mileage}
-            self.data.append(run_obj)
+            self.data.insert(0,run_obj)
             start_date = start_date - timedelta(weeks=1)
             start_date_str = start_date.strftime('%m/%d')
 
