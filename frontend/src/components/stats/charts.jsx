@@ -1,19 +1,19 @@
 import { useState } from 'react'
 import MonthlyTotalsChart from "./charts/monthlyTotalsChart"
 import WeeklyTotalsChart from "./charts/weeklyTotalsChart"
+import RunTypeChart from './charts/runTypeChart'
 import ArrowButton from '../miscComponents/arrowButton/arrowButton'
-// run type composition
 
 export default function Charts ({ data }) {
     const [ chartIndex, setChartIndex ] = useState(1)
-    const monthlyChart = <MonthlyTotalsChart data={ data.monthly_chart }/>
-    const weeklyChart = <WeeklyTotalsChart data={ data.weekly_chart } />
 
     function handleChartDisplay () {
         if(chartIndex === 0) {
-            return monthlyChart;
+            return <MonthlyTotalsChart data={ data.monthly_chart }/>
         } else if(chartIndex === 1) {
-            return weeklyChart;
+            return <WeeklyTotalsChart data={ data.weekly_chart } />
+        } else {
+            return <RunTypeChart data={ data.run_types_chart } />
         }
     }
 
@@ -24,8 +24,6 @@ export default function Charts ({ data }) {
     function incrementChartIndex () {
         setChartIndex(chartIndex + 1)
     }
-
-
 
     return (
         <section className='charts'>

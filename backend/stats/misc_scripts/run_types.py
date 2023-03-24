@@ -2,7 +2,7 @@ from stats.misc_scripts.misc_functions import calc_mileage
 
 class RunTypes:
     """Class to provide data for run type composition"""
-    RUN_TYPES = ['Easy Run', 'Long Run', 'Intervals', 'Tempo']
+    RUN_TYPES = ['Easy Run', 'Long Run', 'Intervals', 'Tempo Run']
     def __init__(self, runs):
         self.runs = runs
         self.data = []

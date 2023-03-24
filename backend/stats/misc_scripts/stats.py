@@ -41,6 +41,6 @@ class Stats:
         """Compiles Rechart data"""
         run_types = RunTypes(self.runs)
         run_types.pull_data()
-        self.data['run_types'] = run_types.data
+        self.data['run_types_chart'] = run_types.data
 
     
