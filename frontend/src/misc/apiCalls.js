@@ -95,3 +95,10 @@ export const getStats = async (filters) => {
     })
     return result.data
 }
+
+// Password Reset
+
+export const resetPassword = async (fields) => {
+    const response = await axios.get('/api/password/reset', fields)
+    return response
+}
