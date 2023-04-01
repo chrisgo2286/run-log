@@ -5,18 +5,15 @@ import { resetPassword } from '../../misc/apiCalls';
 
 export default function PasswordReset () {
     const [ fields, setFields ] = useState({ email: '' })
+    const [ message, setMessage ] = useState('')
 
     function handleReset () {
         resetPassword(fields)    
         .then((response) => {
             if(response.status === 200) {
-                unhideMessage();
+                setMessage(response.data.msg);
             }
         })
-    }
-
-    function unhideMessage () {
-        console.log('Message revealed')
     }
 
     return (
@@ -29,7 +26,7 @@ export default function PasswordReset () {
                 fields={ fields }
                 setFields={ setFields } />
             <Button onClick={ handleReset } label='RESET' />
-            <p hidden>Please check your email for a link to reset your password.</p>
+            <p>{ message }</p>
         </main>        
     )
 }
