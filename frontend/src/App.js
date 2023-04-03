@@ -15,6 +15,7 @@ import UpdateRun from './components/runDetail/updateRun';
 import Register from './components/register/register';
 import Login from './components/login/login';
 import PasswordReset from './components/passwordReset/passwordReset';
+import PasswordResetConfirm from './components/passwordReset/passwordResetConfirm';
 import axios from 'axios';
 import { UserContext, MonthContext } from './misc/context';
 import { getMonthData } from './misc/calendarFunctions';
@@ -58,6 +59,7 @@ export default function App () {
                         <Route path='/register' element={ <Register /> } />
                         <Route path='/login' element={ <Login /> } />
                         <Route path='/password_reset' element={ <PasswordReset /> } />
+                        <Route path='/password_reset_confirm' element={ <PasswordResetConfirm /> } />
                     </Routes>
                 </Router>
             </MonthContext.Provider>
