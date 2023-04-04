@@ -103,3 +103,8 @@ export const resetPassword = async (fields) => {
     const response = await axios.get('/api/accounts/password-reset/', { params })
     return response
 }
+
+export const resetPasswordConfirm = async (fields, token) => {
+    const response = await axios.patch('/api/accounts/password-reset-confirm/', fields)
+    return response
+}

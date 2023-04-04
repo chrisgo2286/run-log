@@ -59,7 +59,7 @@ export default function App () {
                         <Route path='/register' element={ <Register /> } />
                         <Route path='/login' element={ <Login /> } />
                         <Route path='/password_reset' element={ <PasswordReset /> } />
-                        <Route path='/password_reset_confirm' element={ <PasswordResetConfirm /> } />
+                        <Route path='/password_reset_confirm/:token' element={ <PasswordResetConfirm /> } />
                     </Routes>
                 </Router>
             </MonthContext.Provider>
