@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useParams } from "react-router-dom"
 import Button from '../miscComponents/button/button'
 import Input from '../miscComponents/input/input'
+import { resetPasswordConfirm } from '../../misc/apiCalls'
 
 export default function PasswordResetConfirm () {
     const { token } = useParams()
@@ -10,8 +11,9 @@ export default function PasswordResetConfirm () {
         password2: '',
     })
 
-    function handleSubmit () {
-        console.log('Submitted with token ' + token)
+    async function handleSubmit () {
+        const response = await resetPasswordConfirm(fields, token)
+        console.log(response)
     }
     
     return (

@@ -12,7 +12,14 @@ def password_reset_view(request):
     match = User.objects.filter(email=email)
     if match:
         send_password_reset_link(email)
+        print('email sent')
         content = {'msg': 'Please check your email for link!'}
         return Response(content, status=status.HTTP_200_OK)    
     content = { 'msg': 'Email not found!' }
     return Response(content, status=status.HTTP_200_OK)
+
+@api_view(('PATCH',))
+def password_reset_confirm_view(request):
+    """View to update password for user"""
+    print(request)
+    return Response({'msg': 'Test'})

@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 def send_password_reset_link(email):
     """Sends password reset link to email"""
     user = find_user(email)
-    token = find_token(user)
+    token = find_token(user)   
     link = generate_link(token)
     msg = create_msg(link)
 
@@ -16,6 +16,7 @@ def send_password_reset_link(email):
         from_email=settings.EMAIL_HOST_USER,
         recipient_list=[email]
     )
+    print('Msg Sent')
 
 def find_user(email):
     """Return user id for given email"""
@@ -40,7 +41,7 @@ def create_msg(link):
 
 def is_tokened(user):
     """Returns True if user already has token"""
-    return Token.objects.filter(user=user).exist()
+    return Token.objects.filter(user=user).exists()
 
 def fetch_token(user):
     """Returns user's existing token"""
