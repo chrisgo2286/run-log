@@ -39,7 +39,9 @@ export default function Login () {
         <div className="login">
             <LoginFields fields={ credentials } setFields={ setCredentials } />
             <Button onClick={ handleSubmit } label='Login' data-cy='login-btn'/>
-            <Link to='/password_reset'>Forgot Password?</Link>
+            <div className='password-reset-link'>
+                <Link to='/password_reset'>Forgot Password?</Link>
+            </div>
             <ValidationErrors errors={ errors } />
         </div>
     )

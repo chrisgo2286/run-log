@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Input from '../miscComponents/input/input';
 import Button from '../miscComponents/button/button';
 import { resetPassword } from '../../misc/apiCalls';
+import './passwordReset.css';
 
 export default function PasswordReset () {
     const [ fields, setFields ] = useState({ email: '' })
@@ -17,8 +18,8 @@ export default function PasswordReset () {
     }
 
     return (
-        <main>
-            <h1>Enter you email to reset your password.</h1>
+        <main className='password-reset'>
+            <h1>Enter your email to reset your password.</h1>
             <Input 
                 type='text'
                 name='email'
