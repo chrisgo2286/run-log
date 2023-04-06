@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../misc/context';
 import { postLogin } from '../../misc/apiCalls';
 import { updateLocalStorage, updateUser } from '../../misc/userFunctions';
+import { Link } from 'react-router-dom';
 import LoginFields from './loginFields';
 import Button from '../miscComponents/button/button';
 import ValidationErrors from '../miscComponents/validationErrors/validationErrors';
@@ -31,10 +32,14 @@ export default function Login () {
         }
     }
 
+    function handleReset () {
+        navigate('/password_reset')
+    }
     return (
         <div className="login">
             <LoginFields fields={ credentials } setFields={ setCredentials } />
             <Button onClick={ handleSubmit } label='Login' data-cy='login-btn'/>
+            <Link to='/password_reset'>Forgot Password?</Link>
             <ValidationErrors errors={ errors } />
         </div>
     )

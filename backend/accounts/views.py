@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
 from .misc.misc_funcs import send_password_reset_link
 
 @api_view(('GET',))
@@ -21,5 +22,9 @@ def password_reset_view(request):
 @api_view(('PATCH',))
 def password_reset_confirm_view(request):
     """View to update password for user"""
-    print(request)
-    return Response({'msg': 'Test'})
+    token = request.query_params['token']
+    user = Token.objects.get(key=token).user
+    user.set_password(request.data.get('password1'))
+    user.save() 
+    content = { 'msg': 'Password successfully changed!'}
+    return Response(content, status=status.HTTP_200_OK)

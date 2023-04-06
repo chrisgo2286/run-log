@@ -10,10 +10,15 @@ export default function PasswordResetConfirm () {
         password1: '',
         password2: '',
     })
+    const [ message, setMessage ] = useState('')
 
     async function handleSubmit () {
         const response = await resetPasswordConfirm(fields, token)
-        console.log(response)
+        if(response.status === 200) {
+            setMessage(response.data.msg)
+        } else {
+            setMessage('There was an error changing your password!')
+        }
     }
     
     return (
@@ -34,6 +39,7 @@ export default function PasswordResetConfirm () {
                 fields={ fields }
                 setFields={ setFields } />
             <Button onClick={ handleSubmit } label='SUBMIT' />
+            <p>{ message }</p>
         </main>       
     )
 }

@@ -27,7 +27,7 @@ def find_user(email):
 def find_token(user):
     """Returns existing token for user if available, otherwise creates and
     returns new token"""
-    if is_tokened:
+    if is_tokened(user):
         return fetch_token(user)
     return generate_token(user)
 
