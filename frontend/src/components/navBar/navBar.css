@@ -3,7 +3,7 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    min-height: 5vh;
+    min-height: 10vh;
     background: var(--navBarBG);
     margin-bottom: 20px;
   }

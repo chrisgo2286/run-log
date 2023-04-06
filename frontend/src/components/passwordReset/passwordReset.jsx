@@ -11,6 +11,7 @@ export default function PasswordReset () {
     function handleReset () {
         resetPassword(fields)    
         .then((response) => {
+            console.log(response)
             if(response.status === 200) {
                 setMessage(response.data.msg);
             }

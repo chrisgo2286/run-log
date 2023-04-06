@@ -100,7 +100,9 @@ export const getStats = async (filters) => {
 
 export const resetPassword = async (fields) => {
     const params = { 'email': fields.email }
+    console.log('Email: ' + fields.email)
     const response = await axios.get('/api/accounts/password-reset/', { params })
+    console.log('Response: ' + response)
     return response
 }
 

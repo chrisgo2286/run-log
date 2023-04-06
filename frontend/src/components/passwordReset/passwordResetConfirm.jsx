@@ -3,26 +3,35 @@ import { useParams } from "react-router-dom"
 import Button from '../miscComponents/button/button'
 import Input from '../miscComponents/input/input'
 import { resetPasswordConfirm } from '../../misc/apiCalls'
+import ValidationErrors from '../miscComponents/validationErrors/validationErrors';
+import { validatePassword } from '../../misc/validation/validatePasswordReset'
 
 export default function PasswordResetConfirm () {
     const { token } = useParams()
+    const [ message, setMessage ] = useState('')
+    const [ errors, setErrors ] = useState([])
     const [ fields, setFields ] = useState({
         password1: '',
         password2: '',
     })
-    const [ message, setMessage ] = useState('')
 
     async function handleSubmit () {
+        const newErrors = validatePassword(fields)
+        if(newErrors.length > 0) {
+            setErrors(newErrors);
+            return null;
+        } 
+        
         const response = await resetPasswordConfirm(fields, token)
         if(response.status === 200) {
             setMessage(response.data.msg)
         } else {
-            setMessage('There was an error changing your password!')
+            setErrors(['There was an error changing your password!'])
         }
     }
     
     return (
-        <main>
+        <main className='password-reset'>
             <h1>Enter new password.</h1>
             <p>Please enter your new password twice so we can verify you 
                 typed it in correctly</p>
@@ -40,6 +49,7 @@ export default function PasswordResetConfirm () {
                 setFields={ setFields } />
             <Button onClick={ handleSubmit } label='SUBMIT' />
             <p>{ message }</p>
+            <ValidationErrors errors={ errors } />
         </main>       
     )
 }
