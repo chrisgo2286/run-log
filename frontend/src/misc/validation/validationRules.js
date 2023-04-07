@@ -55,3 +55,21 @@ export function validateEmail (email) {
         return 'Please enter a valid email!'
     }
 }
+
+export function validateAge (age) {
+    if (!Number.isInteger(age)) {
+        return 'Please enter a valid age!'
+    }
+}
+
+export function validateProfileEmail (email) {
+    if (!email.includes('@')) {
+        return 'Please enter a valid email!'
+    }
+}
+
+export function validateGender (gender) {
+    if (!gender) {
+        return 'Please enter your gender!'
+    }
+}
