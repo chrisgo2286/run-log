@@ -1,6 +1,10 @@
-import { validatePassword1, validatePassword2 } from "./validationRules"
+import { 
+    validatePassword1, 
+    validatePassword2, 
+    validateEmail 
+} from "./validationRules"
 
-export function validatePassword ({ password1, password2 }) {
+export function validatePasswordResetConfirm ({ password1, password2 }) {
     const password1Error = validatePassword1(password1)
     const password2Error = validatePassword2(password1, password2)
     
@@ -8,4 +12,9 @@ export function validatePassword ({ password1, password2 }) {
         ...password1Error ? [password1Error]: [],
         ...password2Error ? [password2Error]: [],
     ]
+}
+
+export function validatePasswordReset ({ email }) {
+    const emailError = validateEmail(email)
+    return [ ...emailError ? [emailError]: [] ]
 }

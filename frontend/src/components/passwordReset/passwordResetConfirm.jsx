@@ -4,7 +4,7 @@ import Button from '../miscComponents/button/button'
 import Input from '../miscComponents/input/input'
 import { resetPasswordConfirm } from '../../misc/apiCalls'
 import ValidationErrors from '../miscComponents/validationErrors/validationErrors';
-import { validatePassword } from '../../misc/validation/validatePasswordReset'
+import { validatePasswordResetConfirm } from '../../misc/validation/validatePasswordReset'
 
 export default function PasswordResetConfirm () {
     const { token } = useParams()
@@ -16,12 +16,12 @@ export default function PasswordResetConfirm () {
     })
 
     async function handleSubmit () {
-        const newErrors = validatePassword(fields)
+        const newErrors = validatePasswordResetConfirm(fields)
         if(newErrors.length > 0) {
             setErrors(newErrors);
             return null;
         } 
-        
+
         const response = await resetPasswordConfirm(fields, token)
         if(response.status === 200) {
             setMessage(response.data.msg)

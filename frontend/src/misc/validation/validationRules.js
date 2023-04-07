@@ -47,3 +47,11 @@ export function validateTime (time) {
         return 'Please enter a valid duration!'
     }
 }
+
+export function validateEmail (email) {
+    if (!email) {
+        return 'Please enter your email!'
+    } else if (!email.includes('@')) {
+        return 'Please enter a valid email!'
+    }
+}
