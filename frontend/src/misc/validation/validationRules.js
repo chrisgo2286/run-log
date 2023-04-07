@@ -1,3 +1,4 @@
+
 export function validateUsername (username) {
     if (!username) {
         return 'Username cannot be blank!'
@@ -57,7 +58,11 @@ export function validateEmail (email) {
 }
 
 export function validateAge (age) {
-    if (!Number.isInteger(age)) {
+    // if (!Number.isInteger(age)) {
+    //     return 'Please enter a valid age!'
+    // }
+    const re = /^\d+$/
+    if (!re.test(age)) {
         return 'Please enter a valid age!'
     }
 }

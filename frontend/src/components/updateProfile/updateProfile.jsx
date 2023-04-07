@@ -4,11 +4,14 @@ import { patchUserProfile } from '../../misc/apiCalls';
 import ProfileFields from './profileFields';
 import Button from '../miscComponents/button/button';
 import './updateProfile.css';
+import ValidationErrors from '../miscComponents/validationErrors/validationErrors';
+import { validateProfile } from '../../misc/validation/validateProfile';
 
 export default function UpdateProfile () {
     const profile = useLocation().state;
     const { id, age, gender, email, preference, history, description, privacy } = profile;
     const navigate = useNavigate();
+    const [ errors, setErrors ] = useState([])
     const [ fields, setFields ] = useState({
         age: age,
         gender: gender,
@@ -20,6 +23,12 @@ export default function UpdateProfile () {
     })
 
     function handleSubmit () {
+        const newErrors = validateProfile(fields)
+        if (newErrors.length > 0) {
+            setErrors(newErrors)
+            return null
+        }
+
         patchUserProfile(id, fields)
         navigate('/user_profile');
     }
@@ -31,6 +40,7 @@ export default function UpdateProfile () {
                 onClick={ handleSubmit } 
                 label='Submit'
                 data-cy='update-profile-btn' />
+            <ValidationErrors errors={ errors } />
         </div>
     )
 }
