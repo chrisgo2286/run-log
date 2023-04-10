@@ -40,7 +40,7 @@ export default function CreateProfile () {
             <Button 
                 onClick={ handleSubmit } 
                 label='Submit'
-                data-cy='create-profile-btn' />
+                data-cy='create-profile-button' />
             <ValidationErrors errors={ errors } />
         </div>
     )

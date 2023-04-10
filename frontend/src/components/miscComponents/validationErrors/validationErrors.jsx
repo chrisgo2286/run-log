@@ -15,7 +15,7 @@ export default function ValidationErrors ({ errors }) {
     }
 
     return (
-        <div className='validation'>
+        <div className='validation' data-cy='validation-errors'>
             { handleErrors() }
         </div>        
     )

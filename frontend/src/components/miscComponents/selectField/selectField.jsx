@@ -32,7 +32,11 @@ export default function SelectField ({
             onMouseEnter={ toggleIsHovered }
             onMouseLeave={ toggleIsHovered }>
             <label htmlFor={ name }>{ name }</label>
-            <select name={ name } value={ choice } onChange={ handleChange }>
+            <select 
+                name={ name } 
+                value={ choice } 
+                onChange={ handleChange }
+                { ...other }>
                 { 
                     options.map((option, ndx) =>
                         <option key={ndx} value={ option }>{ option }</option>
