@@ -23,12 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import { username, password } from 'data.json';
 
 Cypress.Commands.add('login', () => {
     cy.visit('/')
     cy.get('a[data-cy="login-link"]').click()
-    cy.get('input[data-cy="username-field"]').type('tester')
-    cy.get('input[data-cy="password-field"]').type('testcase123')
+    cy.get('input[data-cy="username-field"]').type(username)
+    cy.get('input[data-cy="password-field"]').type(password)
     cy.get('div[data-cy="login-btn"]').click()
 })
 
