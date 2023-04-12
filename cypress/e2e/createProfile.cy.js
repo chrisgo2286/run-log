@@ -1,4 +1,4 @@
-import { validationErrors, age, gender, email } from 'data.json'
+import { validationErrors, age, gender, email } from '../fixtures/data.json'
 
 const ageField = 'input[data-cy="profile-age"]'
 const genderField = 'select[data-cy="profile-gender"]'
@@ -50,7 +50,7 @@ describe('CreateProfile page', () => {
     it('Submitting data navigates to UserProfile; shows correct data', () => {
         cy.intercept({
             method: 'POST',
-            url: 'api/profiles/',
+            url: 'api/accounts/registration/',
         })
 
         cy.get(ageField).type(age)

@@ -23,7 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import { username, password } from 'data.json';
+import { username, password } from '../fixtures/data.json';
 
 Cypress.Commands.add('login', () => {
     cy.visit('/')
