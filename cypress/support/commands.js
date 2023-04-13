@@ -24,6 +24,8 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import { username, password } from '../fixtures/data.json';
+import { monthData } from '../fixtures/monthData.json';
+import { profileData } from '../fixtures/profileData.json';
 
 Cypress.Commands.add('login', () => {
     cy.visit('/')
@@ -35,4 +37,25 @@ Cypress.Commands.add('login', () => {
 
 Cypress.Commands.add('logout', () => {
     cy.get('div[data-cy="logout-link"]').click()
+})
+
+Cypress.Commands.add('interceptPostProfile', () => {
+    cy.intercept({
+        method: 'POST',
+        url: 'api/profiles/',
+    })
+})
+
+Cypress.Commands.add('interceptPostRegistration', () => {
+    cy.intercept('POST', 'api/accounts/registration/', {
+        statusCode: 201 
+    })
+})
+
+Cypress.Commands.add('interceptGetCalendar', () => {
+    cy.intercept('GET', 'api/calendar/', { fixture: monthData })
+})
+
+Cypress.Commands.add('interceptGetUserProfile', () => {
+    cy.intercept('GET', 'api/profiles/*', { fixture: profileData })
 })

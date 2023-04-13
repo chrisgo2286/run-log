@@ -20,6 +20,10 @@ describe('CreateProfile page', () => {
         cy.visit('create_profile')
     })
 
+    afterEach(() => {
+        cy.logout()
+    })
+
     it('Correct fields are rendered', () => {
         cy.get(ageField).should('exist')
         cy.get(genderField).should('exist')
@@ -48,14 +52,12 @@ describe('CreateProfile page', () => {
     })
 
     it('Submitting data navigates to UserProfile; shows correct data', () => {
-        cy.intercept({
-            method: 'POST',
-            url: 'api/accounts/registration/',
-        })
-
+        cy.interceptPostProfile()
+        cy.interceptGetUserProfile()
         cy.get(ageField).type(age)
         cy.get(genderField).select(gender)
         cy.get(emailField).type(email)
         cy.get(submitButton).click()
+        cy.url().should('include', 'user_profile')
     })
 })
