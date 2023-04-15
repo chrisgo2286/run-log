@@ -1,7 +1,6 @@
 {
     "username": "tester",
     "password": "testcase123",
-    "validationErrors": "div[data-cy='validation-errors']",
     "age": 25,
     "gender": "Male",
     "email": "tester123@testserver.com"

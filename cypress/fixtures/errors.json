@@ -1,0 +1,5 @@
+{
+    "ageError":"Please enter a valid age!",
+    "genderError":"Please enter your gender!",
+    "emailError":"Please enter a valid email!"
+}
