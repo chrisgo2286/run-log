@@ -20,10 +20,6 @@ describe('CreateProfile page', () => {
         cy.visit('create_profile')
     })
 
-    afterEach(() => {
-        cy.logout()
-    })
-
     it('Correct fields are rendered', () => {
         cy.get(ageField).should('exist')
         cy.get(genderField).should('exist')

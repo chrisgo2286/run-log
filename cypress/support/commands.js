@@ -40,9 +40,8 @@ Cypress.Commands.add('logout', () => {
 })
 
 Cypress.Commands.add('interceptPostProfile', () => {
-    cy.intercept({
-        method: 'POST',
-        url: 'api/profiles/',
+    cy.intercept('POST', 'api/profiles/', {
+        statusCode: 201
     })
 })
 
@@ -57,5 +56,5 @@ Cypress.Commands.add('interceptGetCalendar', () => {
 })
 
 Cypress.Commands.add('interceptGetUserProfile', () => {
-    cy.intercept('GET', 'api/profiles/*', { fixture: profileData })
+    cy.intercept('GET', 'api/profiles/', { fixture: "profileData" })
 })

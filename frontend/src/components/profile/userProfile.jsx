@@ -25,6 +25,7 @@ export default function UserProfile () {
         getUserProfile()
         .then((data) => {
             if (data) {
+                console.log(data)
                 setProfile(data)
             } else {
                 navigate('/create_profile');
