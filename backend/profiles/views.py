@@ -17,7 +17,7 @@ class ProfileView(viewsets.ModelViewSet):
 
     def list(self, request):
         queryset = Profile.objects.filter(owner=self.request.user)
-        serializer = ProfileSerializer(queryset, many=True)
+        serializer = ProfileSerializer(queryset[0], many=True)
         return Response(serializer.data)
         
 @api_view(('GET',))

@@ -63,7 +63,8 @@ export const createUserProfile = async (fields) => {
 }
 export const getUserProfile = async () => {
     const result = await axios.get('/api/profiles/')
-    return result.data[0];
+    console.log(result)
+    return result.data;
 }
 
 export const getProfile = async (profile_id) => {
