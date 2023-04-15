@@ -12,7 +12,10 @@ export default function ProfileFooter ({ profile }) {
 
     return (
         <div className='profile-footer'>
-            <Button onClick={ handleNavToEdit } label='Edit' />
+            <Button 
+                onClick={ handleNavToEdit } 
+                label='Edit'
+                data-cy='profile-edit-btn' />
         </div>
     )
 }
