@@ -22,5 +22,9 @@
         "history":"div[data-cy='profile-history']",
         "description":"div[data-cy='profile-description']",
         "editBtn":"div[data-cy='profile-edit-btn']"
+    },
+
+    "updateProfile":{
+        "updateBtn":"div[data-cy='update-profile-btn']"
     }
 }

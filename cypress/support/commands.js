@@ -23,7 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import { testUser } from '../fixtures/testUser.json';
+import { testUser, testUser2 } from '../fixtures/testUser.json';
 import { monthData } from '../fixtures/monthData.json';
 import { profileData } from '../fixtures/profileData.json';
 
@@ -32,6 +32,14 @@ Cypress.Commands.add('login', () => {
     cy.get('a[data-cy="login-link"]').click()
     cy.get('input[data-cy="username-field"]').type(testUser.username)
     cy.get('input[data-cy="password-field"]').type(testUser.password)
+    cy.get('div[data-cy="login-btn"]').click()
+})
+
+Cypress.Commands.add('login2', () => {
+    cy.visit('/')
+    cy.get('a[data-cy="login-link"]').click()
+    cy.get('input[data-cy="username-field"]').type(testUser2.username)
+    cy.get('input[data-cy="password-field"]').type(testUser2.password)
     cy.get('div[data-cy="login-btn"]').click()
 })
 
@@ -57,4 +65,8 @@ Cypress.Commands.add('interceptGetCalendar', () => {
 
 Cypress.Commands.add('interceptGetUserProfile', () => {
     cy.intercept('GET', 'api/profiles/', { fixture: profileData })
+})
+
+Cypress.Commands.add('interceptPatchUserProfile', () => {
+    cy.intercept('PATCH', 'api/profiles/*', { statusCode: 201 })
 })
