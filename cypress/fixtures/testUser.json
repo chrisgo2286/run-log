@@ -1,7 +1,9 @@
 {
-    "username": "tester",
-    "password": "testcase123",
-    "age": 25,
-    "gender": "Male",
-    "email": "tester123@testserver.com"
+    "testUser":{
+        "username":"tester",
+        "password":"testcase123",
+        "age":25,
+        "gender":"Male",
+        "email":"tester123@testserver.com"
+    }
 }

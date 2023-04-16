@@ -1,5 +1,7 @@
 {
-    "ageError":"Please enter a valid age!",
-    "genderError":"Please enter your gender!",
-    "emailError":"Please enter a valid email!"
+    "createProfileErrors":{
+        "age":"Please enter a valid age!",
+        "gender":"Please enter your gender!",
+        "email":"Please enter a valid email!"
+    }
 }

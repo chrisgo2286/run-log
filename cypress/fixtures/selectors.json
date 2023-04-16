@@ -1,13 +1,15 @@
 {
-    "validationErrors": "div[data-cy='validation-errors']",
- 
-    "ageField":"input[data-cy='profile-age']",
-    "genderField":"select[data-cy='profile-gender']",
-    "emailField":"input[data-cy='profile-email']",
-    "preferenceField":"textarea[data-cy='profile-preference']",
-    "historyField":"textarea[data-cy='profile-history']",
-    "descriptionField":"textarea[data-cy='profile-description']",
-    "togglePrivacy":"div[data-cy='toggle-button']",
-    "privacy":"div[data-cy='privacy-choice']",
-    "submitButton":"div[data-cy='create-profile-button']",
+    "validationErrors":"div[data-cy='validation-errors']",
+
+    "createProfile":{
+        "ageField":"input[data-cy='profile-age']",
+        "genderField":"select[data-cy='profile-gender']",
+        "emailField":"input[data-cy='profile-email']",
+        "preferenceField":"textarea[data-cy='profile-preference']",
+        "historyField":"textarea[data-cy='profile-history']",
+        "descriptionField":"textarea[data-cy='profile-description']",
+        "togglePrivacy":"div[data-cy='toggle-button']",
+        "privacy":"div[data-cy='privacy-choice']",
+        "submitButton":"div[data-cy='create-profile-button']"
+    }
 }
