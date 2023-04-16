@@ -17,9 +17,11 @@ class ProfileView(viewsets.ModelViewSet):
 
     def list(self, request):
         queryset = Profile.objects.filter(owner=self.request.user)
-        serializer = ProfileSerializer(queryset[0], many=False)
-        return Response(serializer.data)
-        
+        if queryset:
+            serializer = ProfileSerializer(queryset[0], many=False)
+            return Response(serializer.data)
+        return Response("")
+    
 @api_view(('GET',))
 def search_profiles_view(request):
     filter = ProfileFilter(**request.query_params)

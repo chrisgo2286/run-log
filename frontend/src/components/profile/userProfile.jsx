@@ -24,6 +24,7 @@ export default function UserProfile () {
     useEffect(() => {
         getUserProfile()
         .then((data) => {
+            console.log(data)
             if (data) {
                 setProfile(data)
             } else {

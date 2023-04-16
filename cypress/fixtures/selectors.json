@@ -11,5 +11,16 @@
         "togglePrivacy":"div[data-cy='toggle-button']",
         "privacy":"div[data-cy='privacy-choice']",
         "submitButton":"div[data-cy='create-profile-button']"
+    },
+
+    "userProfile":{
+        "username":"div[data-cy='profile-username']",
+        "age":"div[data-cy='profile-age']",
+        "gender":"div[data-cy='profile-gender']",
+        "email":"div[data-cy='profile-email']",
+        "preference":"div[data-cy='profile-preference']",
+        "history":"div[data-cy='profile-history']",
+        "description":"div[data-cy='profile-description']",
+        "editBtn":"div[data-cy='profile-edit-btn']"
     }
 }

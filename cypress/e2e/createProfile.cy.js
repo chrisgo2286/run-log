@@ -35,7 +35,7 @@ describe('CreateProfile page', () => {
         })
     })
 
-    it('Submitting data navigates to UserProfile; shows correct data', () => {
+    it('Submitting data navigates to UserProfile', () => {
         cy.interceptPostProfile()
         cy.interceptGetUserProfile()
         cy.get(createProfile.ageField).type(testUser.age)

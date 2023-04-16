@@ -1,10 +1,12 @@
 {
-    "id": 1,
-    "username": "Tester",
-    "age": 25,
-    "gender": "Male",
-    "email": "tester123@testserver.com",
-    "preference": "Half-Marathon",
-    "history": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    "profileData":{
+        "id": 1,
+        "username": "Tester2",
+        "age": 25,
+        "gender": "Male",
+        "email": "tester2@testserver.com",
+        "preference": "Half-Marathon",
+        "history": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    }
 }
