@@ -1,10 +1,11 @@
 import { profileData } from '../fixtures/profileData.json'
-import { userProfile } from '../fixtures/selectors.json'
+import { userProfile, navLinks } from '../fixtures/selectors.json'
+import { testUser2 } from '..'
 
 describe('UserProfile page', () => {
     beforeEach(() => {
-        cy.login()
-        cy.visit('user_profile')
+        cy.login(testUser2.username, testUser2.password)
+        cy.get(navLinks.userProfile).click()
     })
 
     it('Page renders with correct data', () => {

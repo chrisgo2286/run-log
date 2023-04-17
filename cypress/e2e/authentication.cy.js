@@ -1,3 +1,5 @@
+
+
 describe('Login and Logout', () => {
     it('User can log in and log off application', () => {
         cy.login()

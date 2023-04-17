@@ -23,26 +23,18 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import { testUser, testUser2 } from '../fixtures/testUser.json';
+import { navLinks, auth } from '../fixtures/selectors.json'
 
-Cypress.Commands.add('login', () => {
+Cypress.Commands.add('login', (username, password) => {
     cy.visit('/')
-    cy.get('a[data-cy="login-link"]').click()
-    cy.get('input[data-cy="username-field"]').type(testUser.username)
-    cy.get('input[data-cy="password-field"]').type(testUser.password)
-    cy.get('div[data-cy="login-btn"]').click()
-})
-
-Cypress.Commands.add('login2', () => {
-    cy.visit('/')
-    cy.get('a[data-cy="login-link"]').click()
-    cy.get('input[data-cy="username-field"]').type(testUser2.username)
-    cy.get('input[data-cy="password-field"]').type(testUser2.password)
-    cy.get('div[data-cy="login-btn"]').click()
+    cy.get(navLinks.login).click()
+    cy.get(auth.usernameField).type(username)
+    cy.get(auth.passwordField).type(password)
+    cy.get(auth.loginBtn).click()
 })
 
 Cypress.Commands.add('logout', () => {
-    cy.get('div[data-cy="logout-link"]').click()
+    cy.get(navLinks.logout).click()
 })
 
 Cypress.Commands.add('interceptPostProfile', () => {

@@ -24,10 +24,10 @@ export function siteLinksLoggedIn () {
     return (
         <React.Fragment>
             <Link to='/'>Home</Link>
-            <Link to='/user_profile' data-cy='user-profile'>Profile</Link>
-            <Link to='/stats'>Stats</Link>
-            <Link to='/calendar'>Calendar</Link>
-            <Link to='/profile_search'>Search</Link>
+            <Link to='/user_profile' data-cy='user-profile-link'>Profile</Link>
+            <Link to='/stats' data-cy="stats-link">Stats</Link>
+            <Link to='/calendar' data-cy="calendar-link">Calendar</Link>
+            <Link to='/profile_search' data-cy="profile-search-link">Search</Link>
         </React.Fragment>
     )
 }

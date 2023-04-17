@@ -1,11 +1,19 @@
 import { testUser } from '../fixtures/testUser.json'
-import { createProfile, validationErrors } from '../fixtures/selectors.json'
+import { 
+    createProfile, 
+    validationErrors,
+    navLinks 
+} from '../fixtures/selectors.json'
 import { createProfileErrors } from '../fixtures/errors.json'
 
 describe('CreateProfile page', () => {
     beforeEach(() => {
-        cy.login()
-        cy.visit('create_profile')
+        cy.login(testUser.username, testUser.password)
+        cy.get(navLinks.userProfile).click()
+    })
+
+    it('URL should be api/create_profile', () => {
+        cy.url().should('include', 'create_profile')
     })
 
     it('Correct fields are rendered', () => {
