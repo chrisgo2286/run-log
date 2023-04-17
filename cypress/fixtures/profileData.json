@@ -1,20 +1,10 @@
 {
-    "profileData":{
-        "id":1,
-        "username":"Tester2",
-        "age":25,
-        "gender":"Male",
-        "email":"tester2@testserver.com",
-        "preference":"Half-Marathon",
-        "history":"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-    },
-
-    "profileData2":{
-        "age":26,
-        "email":"tester222@testserver.com",
-        "preference":"Marathon",
-        "history":"This is my new history",
-        "description":"This is my new description"
-    }
+    "id":1,
+    "username":"Tester2",
+    "age":25,
+    "gender":"Male",
+    "email":"tester2@testserver.com",
+    "preference":"Half-Marathon",
+    "history":"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit"
 }

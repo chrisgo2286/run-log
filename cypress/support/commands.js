@@ -24,8 +24,6 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import { testUser, testUser2 } from '../fixtures/testUser.json';
-import { monthData } from '../fixtures/monthData.json';
-import { profileData } from '../fixtures/profileData.json';
 
 Cypress.Commands.add('login', () => {
     cy.visit('/')
@@ -60,11 +58,11 @@ Cypress.Commands.add('interceptPostRegistration', () => {
 })
 
 Cypress.Commands.add('interceptGetCalendar', () => {
-    cy.intercept('GET', 'api/calendar/', { fixture: monthData })
+    cy.intercept('GET', 'api/calendar/', { fixture: 'monthData.json' })
 })
 
 Cypress.Commands.add('interceptGetUserProfile', () => {
-    cy.intercept('GET', 'api/profiles/', { fixture: profileData })
+    cy.intercept('GET', 'api/profiles/', { fixture: 'profileData.json' })
 })
 
 Cypress.Commands.add('interceptPatchUserProfile', () => {

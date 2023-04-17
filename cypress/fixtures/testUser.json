@@ -1,6 +1,6 @@
 {
     "testUser":{
-        "username":"tester1",
+        "username":"tester",
         "password":"testcase123",
         "age":25,
         "gender":"Male",

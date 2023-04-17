@@ -24,7 +24,7 @@ export function siteLinksLoggedIn () {
     return (
         <React.Fragment>
             <Link to='/'>Home</Link>
-            <Link to='/user_profile'>Profile</Link>
+            <Link to='/user_profile' data-cy='user-profile'>Profile</Link>
             <Link to='/stats'>Stats</Link>
             <Link to='/calendar'>Calendar</Link>
             <Link to='/profile_search'>Search</Link>
