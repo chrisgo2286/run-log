@@ -3,5 +3,6 @@
         "age":"Please enter a valid age!",
         "gender":"Please enter your gender!",
         "email":"Please enter a valid email!"
-    }
+    },
+    "loginErrors":"You have entered invalid credentials!"
 }

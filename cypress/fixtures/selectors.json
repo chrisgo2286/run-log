@@ -6,14 +6,15 @@
         "stats":"a[data-cy='stats-link']",
         "calendar":"a[data-cy='calendar-link']",
         "profileSearch":"a[data-cy='profile-search-link']",
-        "logout":"div[data-cy='logout-link']"
+        "logout":"div[data-cy='logout-link']",
+        "greeting":
     },
 
     "auth":{
         "usernameField":"input[data-cy='username-field']",
         "passwordField":"input[data-cy='password-field']",
         "loginBtn":"div[data-cy='login-btn']",
-    }
+    },
 
     "validationErrors":"div[data-cy='validation-errors']",
 
