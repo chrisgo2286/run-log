@@ -21,9 +21,16 @@ export default function ToggleButton ({ name, init_choice, alt_choice, fields, s
     }
 
     return (
-        <div className='toggle-button' data-cy='toggle-button'>
-            <div className={ createClassOptionA() } onClick={ toggleChoice }></div>
-            <div className={ createClassOptionB() } onClick={ toggleChoice }></div>
+        <div className='toggle-button'>
+            <div 
+                className={ createClassOptionA() } 
+                onClick={ toggleChoice } 
+                data-cy='toggle-button'>
+            </div>
+            <div 
+                className={ createClassOptionB() } 
+                onClick={ toggleChoice }>
+            </div>
             <div className='toggle-choice' data-cy='privacy-choice'>{ choice }</div>            
         </div>
     )

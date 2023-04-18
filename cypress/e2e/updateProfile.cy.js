@@ -20,12 +20,12 @@ describe('Update Profile page', () => {
     })
 
     it('Page renders correct information', () => {
-        cy.get(createProfile.ageField).should('include', profileData.age)
-        cy.get(createProfile.genderField).should('include', profileData.gender)
-        cy.get(createProfile.emailField).should('include', profileData.email)
-        cy.get(createProfile.preferenceField).should('include', profileData.preference)
-        cy.get(createProfile.historyField).should('include', profileData.history)
-        cy.get(createProfile.descriptionField).should('include', profileData.description)
+        cy.get(createProfile.ageField).should('have.value', profileData.age)
+        cy.get(createProfile.genderField).should('have.value', profileData.gender)
+        cy.get(createProfile.emailField).should('have.value', profileData.email)
+        cy.get(createProfile.preferenceField).should('have.value', profileData.preference)
+        cy.get(createProfile.historyField).should('have.value', profileData.history)
+        cy.get(createProfile.descriptionField).should('have.value', profileData.description)
     })
 
     it('Clicking privacy toggle should switch to public', () => {
@@ -34,17 +34,17 @@ describe('Update Profile page', () => {
     })
 
     it('Typing new data should overwrite old data', () => {
-        cy.get(createProfile.ageField).type(profileData2.age)
-        cy.get(createProfile.emailField).type(profileData2.email)
-        cy.get(createProfile.preferenceField).type(profileData2.preference)
-        cy.get(createProfile.historyField).type(profileData2.history)
-        cy.get(createProfile.descriptionField).type(profileData2.description)
+        cy.get(createProfile.ageField).clear().type(profileData2.age)
+        cy.get(createProfile.emailField).clear().type(profileData2.email)
+        cy.get(createProfile.preferenceField).clear().type(profileData2.preference)
+        cy.get(createProfile.historyField).clear().type(profileData2.history)
+        cy.get(createProfile.descriptionField).clear().type(profileData2.description)
         
-        cy.get(createProfile.ageField).should('include', profileData2.age)
-        cy.get(createProfile.emailField).should('include', profileData2.email)
-        cy.get(createProfile.preferenceField).should('include', profileData2.preference)
-        cy.get(createProfile.historyField).should('include', profileData2.history)
-        cy.get(createProfile.descriptionField).should('include', profileData2.description)
+        cy.get(createProfile.ageField).should('have.value', profileData2.age)
+        cy.get(createProfile.emailField).should('have.value', profileData2.email)
+        cy.get(createProfile.preferenceField).should('have.value', profileData2.preference)
+        cy.get(createProfile.historyField).should('have.value', profileData2.history)
+        cy.get(createProfile.descriptionField).should('have.value', profileData2.description)
     })
 
     it('Submitting new data should send POST request to api/profiles/* and nav to user profile', () => {

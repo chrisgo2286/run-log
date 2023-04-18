@@ -7,13 +7,13 @@
         "calendar":"a[data-cy='calendar-link']",
         "profileSearch":"a[data-cy='profile-search-link']",
         "logout":"div[data-cy='logout-link']",
-        "greeting":
+        "greeting": "div[data-cy='greeting']"
     },
 
     "auth":{
         "usernameField":"input[data-cy='username-field']",
         "passwordField":"input[data-cy='password-field']",
-        "loginBtn":"div[data-cy='login-btn']",
+        "loginBtn":"div[data-cy='login-btn']"
     },
 
     "validationErrors":"div[data-cy='validation-errors']",
