@@ -15,6 +15,7 @@ describe('Login and Logout', () => {
         cy.get(loginBtn).click()
         cy.get(validationErrors).children().should(($error) => {
             expect($error.eq(0)).to.contain(loginErrors)
+        })
     })
 
     it('Entering incorrect credentials returns error message', () => {
@@ -42,4 +43,4 @@ describe('Login and Logout', () => {
         cy.logout()
         cy.get(navLinks.register).should('exist')
     })
-});
+})
