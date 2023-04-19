@@ -1,3 +1,4 @@
+from datetime import datetime
 from runlog.models import Run
 from stats.misc_scripts.summary_stats import SummaryStats
 from stats.misc_scripts.monthly_mileage import MonthlyMileage
@@ -9,7 +10,7 @@ class Stats:
     def __init__(self, user_id, **params):
         self.user_id = user_id
         self.params = params
-        self.runs = Run.objects.filter(owner=self.user_id)
+        self.runs = self.compile_runs(user_id)
         self.data = dict()
 
     def compile(self):
@@ -43,4 +44,7 @@ class Stats:
         run_types.pull_data()
         self.data['run_types_chart'] = run_types.data
 
-    
+    def compile_runs(self, user_id):
+        """Returns queryset of completed runs for owner"""
+        today = datetime.today()
+        return Run.objects.filter(owner=user_id, date__lte=today)
