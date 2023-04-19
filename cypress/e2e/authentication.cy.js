@@ -35,7 +35,7 @@ describe('Login and Logout', () => {
 
     it('Logging in updates greeting in navbar', () => {
         cy.login(testUser.username, testUser.password)
-        cy.get('div[data-cy="greeting"]').should('include', testUser.username)
+        cy.get(navLinks.greeting).should('include', testUser.username)
     })
 
     it('Logout logs user out', () => {
