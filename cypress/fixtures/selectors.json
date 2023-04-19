@@ -32,8 +32,7 @@
 
     "userProfile":{
         "username":"div[data-cy='profile-username']",
-        "age":"div[data-cy='profile-age']",
-        "gender":"div[data-cy='profile-gender']",
+        "ageGender":"div[data-cy='profile-gender-age']",
         "email":"div[data-cy='profile-email']",
         "preference":"div[data-cy='profile-preference']",
         "history":"div[data-cy='profile-history']",
