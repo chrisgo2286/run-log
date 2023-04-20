@@ -19,9 +19,15 @@ export default function CalendarHeader () {
 
     return (
         <div className='calendar-header'>
-            <ArrowButton onClick={ handlePriorMonth } label='&#8678;' />
+            <ArrowButton 
+                onClick={ handlePriorMonth } 
+                label='&#8678;' 
+                data-cy='prior-arrow-btn'/>
             <div className='calendar-title' data-cy='month-year'>{ month.name } { month.year }</div>
-            <ArrowButton onClick={ handleNextMonth } label='&#8680;' />
+            <ArrowButton 
+                onClick={ handleNextMonth } 
+                label='&#8680;' 
+                data-cy='next-arrow-btn'/>
         </div>
     )
 }

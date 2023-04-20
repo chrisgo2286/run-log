@@ -42,5 +42,12 @@
 
     "updateProfile":{
         "updateBtn":"div[data-cy='update-profile-btn']"
+    },
+
+    "calendar":{
+        "monthYear":"div[data-cy='month-year']",
+        "priorArrowBtn":"div[data-cy='prior-arrow-btn']",
+        "nextArrowBtn":"div[data-cy='next-arrow-btn']"
     }
+
 }
