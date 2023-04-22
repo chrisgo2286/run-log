@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { MonthContext } from "../../misc/context";
 import CalendarHeader from '../calendar/header/calendarHeader';
 import CalendarBodyPublic from './calendarBodyPublic';
 import { fetchCalendarPublic } from '../../misc/apiCalls';
-import './calendar.css'
 
 export default function CalendarPublic () {
 
@@ -16,7 +16,7 @@ export default function CalendarPublic () {
         .then((data) => {
             setDays(data);
         })
-    }, [ month ]);
+    }, [ month, user_id ]);
 
     return (
         <div className='calendar'>

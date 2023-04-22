@@ -6,8 +6,6 @@ import Card from '../miscComponents/card/card';
 
 export default function SearchItem ({ profile, profile_ids }) {
     const navigate = useNavigate()
-
-
     function handleClick () {
         navigateToPublicProfile(navigate, profile.id, profile_ids)
     }
@@ -16,7 +14,7 @@ export default function SearchItem ({ profile, profile_ids }) {
         <Card 
             header={ <SearchItemHeader profile={ profile } /> } 
             body={ <SearchItemBody profile={ profile } /> } 
-            footer={ <SearchItemFooter /> }
+            footer={ <SearchItemFooter user_id={ profile.owner_id } /> }
             onClick={ handleClick } />
     )
 }

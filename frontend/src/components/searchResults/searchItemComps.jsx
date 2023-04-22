@@ -1,4 +1,5 @@
 import { useNavigate  } from "react-router-dom"
+import { navigateToCalendarPublic } from "../../misc/navFunctions"
 
 export function SearchItemHeader ({ profile }) {
     return (
@@ -19,11 +20,18 @@ export function SearchItemBody ({ profile }) {
     )
 }
 
-export function SearchItemFooter () {
-    navigate = useNavigate()
+export function SearchItemFooter ({ user_id }) {
+    const navigate = useNavigate()
+    function handleClick (e) {
+        e.stopPropagation()
+        navigateToCalendarPublic(navigate, user_id)
+    }
+
     return (
         <div 
             className='search-item-footer'
-            >Link to Calendar</div>
+            onClick={ handleClick }>
+            View Calendar
+        </div>
     )
 }
