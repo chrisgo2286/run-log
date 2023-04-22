@@ -9,6 +9,13 @@ export const fetchData = async (month) => {
     return result.data
 }
 
+export const fetchCalendarPublic = async (user_id, month) => {
+    const result = await axios.get('/api/calendar_public/', {
+        params: { month: month.number, year: month.year, user_id: user_id }
+    })
+    return result.data
+}
+
 export function patchRun (run_id, fields) {
     axios.patch('/api/runs/' + run_id + '/', fields)
     .then(response => {

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { MonthContext } from "../../misc/context";
-import { fetchData } from '../../misc/apiCalls';
+import CalendarHeader from '../calendar/header/calendarHeader';
+import CalendarBodyPublic from './calendarBodyPublic';
+import { fetchCalendarPublic } from '../../misc/apiCalls';
 import './calendar.css'
 
 export default function CalendarPublic () {
@@ -10,7 +12,7 @@ export default function CalendarPublic () {
     const [ days, setDays ] = useState([])
 
     useEffect(() => {
-        fetchData(month)
+        fetchCalendarPublic(user_id, month)
         .then((data) => {
             setDays(data);
         })
@@ -18,7 +20,8 @@ export default function CalendarPublic () {
 
     return (
         <div className='calendar'>
-
+            <CalendarHeader />
+            <CalendarBodyPublic days={ days } />
         </div>
     )
 

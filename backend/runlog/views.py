@@ -5,6 +5,7 @@ from .models import Run
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .misc_scripts.month import Month
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -27,5 +28,14 @@ def calendar_view(request):
     cur_month = int(request.query_params['month'])
     cur_year = int(request.query_params['year'])
     month = Month(request.user, cur_month, cur_year)
+    month.compile()
+    return Response(month.days)
+
+@api_view(('GET',))
+def calendar_public_view(request):
+    user = User.objects.get(id=request.query_params['user_id'])
+    cur_month = int(request.query_params['month'])
+    cur_year = int(request.query_params['year'])
+    month = Month(user, cur_month, cur_year)
     month.compile()
     return Response(month.days)

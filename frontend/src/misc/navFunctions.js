@@ -33,3 +33,7 @@ export function navigateToPublicProfile (navigate, profile_id, profile_ids) {
         }
     })
 }
+
+export function navigateToCalendarPublic (navigate, user_id) {
+    navigate('/calendar_public', { state: user_id })
+}

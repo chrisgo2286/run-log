@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Calendar from './components/calendar/calendar';
+import CalendarPublic from './components/calendarPublic/calendarPublic';
 import PublicProfile from './components/profile/publicProfile/publicProfile';
 import UserProfile from './components/profile/userProfile';
 import CreateProfile from './components/createProfile/createProfile';
@@ -47,6 +48,7 @@ export default function App () {
                     <Routes>
                         <Route path='/' element={ <Home /> } />
                         <Route path='/calendar' element={ <Calendar /> } />
+                        <Route path='/calendar_public' element={ <CalendarPublic /> } />
                         <Route path='/user_profile' element={ <UserProfile />} />
                         <Route path='/public_profile' element={ <PublicProfile />} />
                         <Route path='/create_profile' element={ <CreateProfile />} />
