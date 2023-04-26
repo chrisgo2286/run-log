@@ -33,7 +33,7 @@ export default function ProfileSearch () {
     return (
         <div className='profile-search'>
             <ProfileSearchFilter filters={ filters } setFilters={ setFilters } />
-            <Button onClick={ handleSubmit } label='Search' />
+            <Button onClick={ handleSubmit } data-cy='submit-btn' label='Search' />
             <ValidationErrors errors={ errors } />    
         </div>
     )

@@ -36,7 +36,8 @@ export default function SelectField ({
                 name={ name } 
                 value={ choice } 
                 onChange={ handleChange }
-                { ...other }>
+                data-cy={ 'select-' + name }
+                { ...other } >
                 { 
                     options.map((option, ndx) =>
                         <option key={ndx} value={ option }>{ option }</option>

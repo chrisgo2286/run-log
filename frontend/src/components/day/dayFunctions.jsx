@@ -33,13 +33,13 @@ export function dayWithRun (day) {
 
 export function buildClass (day, isHovered, dateObj) {
     var className = 'day';
-    const curDate = new Date;
+    const curDate = new Date();
     if (day.run_type) {
         const runClass = runTypeClass(day.run_type);
         className = className + ' ' + runClass
     }
     
-    if (day.day_num != 'x' && isHovered) {
+    if (day.day_num !== 'x' && isHovered) {
         className = className + ' ' + 'day-hover';
     }
 
@@ -49,20 +49,16 @@ export function buildClass (day, isHovered, dateObj) {
     return className;
 }
 
-function runTypeClass (run_type) {
+export function runTypeClass (run_type) {
         switch(run_type) {
         case 'Easy Run':
             return 'easy-run';
-            break;
         case 'Long Run':
             return 'long-run';
-            break;
         case 'Intervals':
             return 'intervals';
-            break;
         case 'Tempo Run':
             return 'tempo-run';
-            break;
         default:
             return;
     }

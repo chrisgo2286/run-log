@@ -1,22 +1,15 @@
 {
-    "navLinks":{
-        "login":"a[data-cy='login-link']",
-        "register":"a[data-cy='register-link']",
-        "userProfile":"a[data-cy='user-profile-link']",
-        "stats":"a[data-cy='stats-link']",
-        "calendar":"a[data-cy='calendar-link']",
-        "profileSearch":"a[data-cy='profile-search-link']",
-        "logout":"div[data-cy='logout-link']",
-        "greeting": "div[data-cy='greeting']"
-    },
-
     "auth":{
         "usernameField":"input[data-cy='username-field']",
         "passwordField":"input[data-cy='password-field']",
         "loginBtn":"div[data-cy='login-btn']"
     },
 
-    "validationErrors":"div[data-cy='validation-errors']",
+    "calendar":{
+        "monthYear":"div[data-cy='month-year']",
+        "priorArrowBtn":"div[data-cy='prior-arrow-btn']",
+        "nextArrowBtn":"div[data-cy='next-arrow-btn']"
+    },
 
     "createProfile":{
         "ageField":"input[data-cy='profile-age']",
@@ -30,6 +23,29 @@
         "submitButton":"div[data-cy='create-profile-button']"
     },
 
+    "navLinks":{
+        "login":"a[data-cy='login-link']",
+        "register":"a[data-cy='register-link']",
+        "userProfile":"a[data-cy='user-profile-link']",
+        "stats":"a[data-cy='stats-link']",
+        "calendar":"a[data-cy='calendar-link']",
+        "profileSearch":"a[data-cy='profile-search-link']",
+        "logout":"div[data-cy='logout-link']",
+        "greeting": "div[data-cy='greeting']"
+    },
+
+    "profileFilter":{
+        "username":"input[data-cy='input-username']",
+        "ageMin":"input[data-cy='input-age_min']",
+        "ageMax":"input[data-cy='input-age_max']",
+        "gender":"select[data-cy='select-gender']",
+        "submit":"div[data-cy='submit-btn']"
+    },
+
+    "updateProfile":{
+        "updateBtn":"div[data-cy='update-profile-btn']"
+    },
+
     "userProfile":{
         "username":"div[data-cy='profile-username']",
         "ageGender":"div[data-cy='profile-gender-age']",
@@ -40,14 +56,5 @@
         "editBtn":"div[data-cy='profile-edit-btn']"
     },
 
-    "updateProfile":{
-        "updateBtn":"div[data-cy='update-profile-btn']"
-    },
-
-    "calendar":{
-        "monthYear":"div[data-cy='month-year']",
-        "priorArrowBtn":"div[data-cy='prior-arrow-btn']",
-        "nextArrowBtn":"div[data-cy='next-arrow-btn']"
-    }
-
+    "validationErrors":"div[data-cy='validation-errors']" 
 }
