@@ -7,7 +7,7 @@ import Card from '../miscComponents/card/card';
 export default function SearchItem ({ profile, profile_ids }) {
     const navigate = useNavigate()
     function handleClick () {
-        navigateToPublicProfile(navigate, profile.id, profile_ids)
+        navigateToPublicProfile(navigate, profile.id, profile_ids, profile.owner_id)
     }
 
     return (

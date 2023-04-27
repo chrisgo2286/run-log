@@ -10,7 +10,7 @@ import '../profile.css';
 export default function PublicProfile () {
 
     const state = useLocation().state
-    const profile_ids = state.profile_ids
+    const { profile_ids, owner_id } = state
     const [profile, setProfile ] = useState({
         id: '',
         username: '',
@@ -36,7 +36,7 @@ export default function PublicProfile () {
                     profile={ profile } 
                     profile_ids={ profile_ids }/> }
                 body={ <ProfileBody profile={ profile } /> }
-                footer={ <PublicProfileFooter profile={ profile } /> }
+                footer={ <PublicProfileFooter user_id={ owner_id } /> }
                 hover={ false } 
             />
         </div>

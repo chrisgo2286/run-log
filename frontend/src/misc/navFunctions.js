@@ -25,11 +25,13 @@ export function navigateToSearchResults (navigate, profiles) {
     navigate('/search_results', { state: profiles })
 }
 
-export function navigateToPublicProfile (navigate, profile_id, profile_ids) {
+export function navigateToPublicProfile (navigate, profile_id, profile_ids, 
+    owner_id) {
     navigate('/public_profile', { 
         state: { 
             current_profile_id: profile_id,
-            profile_ids: profile_ids  
+            profile_ids: profile_ids,
+            owner_id: owner_id
         }
     })
 }
