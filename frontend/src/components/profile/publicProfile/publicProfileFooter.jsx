@@ -11,7 +11,7 @@ export default function PublicProfileFooter ({ user_id }) {
 
     return (
         <div
-            className='link-to-calendar'
+            className='public-profile-footer'
             onClick={ handleClick }>
             View Calendar
         </div>

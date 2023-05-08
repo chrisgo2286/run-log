@@ -1,13 +1,13 @@
 import { useState, useContext, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { MonthContext } from "../../misc/context";
-import CalendarHeader from '../calendar/header/calendarHeader';
+import CalendarHeaderPublic from './calendarHeaderPublic';
 import CalendarBodyPublic from './calendarBodyPublic';
 import { fetchCalendarPublic } from '../../misc/apiCalls';
 
 export default function CalendarPublic () {
 
-    const user_id = useLocation().state
+    const { username, user_id } = useLocation().state
     const [ month, setMonth ] = useContext(MonthContext)
     const [ days, setDays ] = useState([])
 
@@ -20,7 +20,7 @@ export default function CalendarPublic () {
 
     return (
         <div className='calendar'>
-            <CalendarHeader />
+            <CalendarHeaderPublic username={ username } />
             <CalendarBodyPublic days={ days } />
         </div>
     )

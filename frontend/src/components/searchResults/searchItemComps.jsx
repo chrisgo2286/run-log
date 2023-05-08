@@ -20,11 +20,11 @@ export function SearchItemBody ({ profile }) {
     )
 }
 
-export function SearchItemFooter ({ user_id }) {
+export function SearchItemFooter ({ profile }) {
     const navigate = useNavigate()
     function handleClick (e) {
         e.stopPropagation()
-        navigateToCalendarPublic(navigate, user_id)
+        navigateToCalendarPublic(navigate, profile.username, profile.id)
     }
 
     return (

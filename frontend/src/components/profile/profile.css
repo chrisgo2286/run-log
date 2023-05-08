@@ -15,6 +15,16 @@
     grid-template-columns: 1fr 8fr 1fr;
 }
 
+.public-profile-footer {
+    margin: 0px auto 20px auto;
+    text-align: center;
+}
+
+.public-profile-footer:hover {
+    color: var(--navBarLinkHover);
+    cursor: pointer;
+}
+
 .profile-arrow-button {
     background-color: var(--profileCardHeaderColor);
     display: flex;
@@ -51,3 +61,4 @@
     margin: 0px auto 20px auto;
     width: 20%;
 }
+

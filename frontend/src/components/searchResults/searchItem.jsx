@@ -14,7 +14,7 @@ export default function SearchItem ({ profile, profile_ids }) {
         <Card 
             header={ <SearchItemHeader profile={ profile } /> } 
             body={ <SearchItemBody profile={ profile } /> } 
-            footer={ <SearchItemFooter user_id={ profile.owner_id } /> }
+            footer={ <SearchItemFooter profile={ profile } /> }
             onClick={ handleClick } />
     )
 }

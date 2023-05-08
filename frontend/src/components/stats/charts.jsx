@@ -17,6 +17,15 @@ export default function Charts ({ data }) {
         }
     }
 
+    function handleChartTitle () {
+        if(chartIndex === 0) {
+            return 'MONTHLY TOTALS'
+        } else if(chartIndex === 1) {
+            return 'WEEKLY TOTALS'
+        } else {
+            return 'RUN TYPE COMPOSITION'
+        }
+    }
     function decrementChartIndex () {
         setChartIndex(chartIndex - 1)
     }
@@ -28,7 +37,7 @@ export default function Charts ({ data }) {
     return (
         <section className='charts'>
             <div className='chart-title'>
-                CHART TITLE
+                { handleChartTitle() }
             </div>
             <div className='chart-body'>
                 <ArrowButton 
