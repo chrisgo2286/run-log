@@ -28,7 +28,7 @@ export function SearchItemFooter ({ user_id }) {
     }
 
     return (
-        <div 
+        <div
             className='search-item-footer'
             onClick={ handleClick }>
             View Calendar

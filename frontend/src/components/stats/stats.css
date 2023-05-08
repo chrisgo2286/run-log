@@ -29,7 +29,14 @@
     font-weight: bold;
 }
 
-.charts {
+.chart-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.chart-body {
     display: flex;
     flex-direction: row;
     align-items: center;

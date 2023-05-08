@@ -27,15 +27,21 @@ export default function Charts ({ data }) {
 
     return (
         <section className='charts'>
-            <ArrowButton 
-                onClick={ decrementChartIndex } 
-                disabled={ (chartIndex === 0) ? true : false} 
-                label='&#8678;' />
-            { (data.monthly_chart) ? handleChartDisplay(): null }
-            <ArrowButton 
-                onClick={ incrementChartIndex } 
-                disabled={ (chartIndex === 2) ? true : false }
-                label='&#8680;' />
+            <div className='chart-title'>
+                CHART TITLE
+            </div>
+            <div className='chart-body'>
+                <ArrowButton 
+                    onClick={ decrementChartIndex } 
+                    disabled={ (chartIndex === 0) ? true : false} 
+                    label='&#8678;' />
+                { (data.monthly_chart) ? handleChartDisplay(): null }
+                <ArrowButton 
+                    onClick={ incrementChartIndex } 
+                    disabled={ (chartIndex === 2) ? true : false }
+                    label='&#8680;' />
+            </div>
+
         </section>
     )
 }
